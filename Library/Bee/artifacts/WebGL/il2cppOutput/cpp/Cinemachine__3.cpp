@@ -94,6 +94,7 @@ struct List_1_t7A69F799B1CD8E02D5CE586F3A2352C46D9039D1;
 struct List_1U5BU5D_tA9C9F576B05E4960A32E11AC0E0CB97BE5D0BEEE;
 struct List_1U5BU5D_t2B7FAD8DF532E41E1F2DAC9BD681FB1EABEAD1D3;
 struct AnimationCurveU5BU5D_t2C4A38D7EFA8095F32316A4D9CE4CBB6840FB7EC;
+struct CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB;
 struct ContactPointU5BU5D_t3570603E8D0685B71B3D8BA07031674B00C5E411;
 struct ContactPoint2DU5BU5D_t427621BF8902AE33C86E7BF384D9B2B5B781F949;
 struct IntPtrU5BU5D_tFD177F8C806A6921AD7150264CCC62FA00CAD832;
@@ -107,6 +108,7 @@ struct ImpulseEventU5BU5D_tCF980EF61AF44F71D004A0DD9CD3CF736C5EAFB7;
 struct IntPointU5BU5D_t7B403FCBEBD7A3039D08F8F48FEDD0295B7FFD13;
 struct IntersectNodeU5BU5D_tAF8957158E520E3A979C8F6587D6508E72732BDC;
 struct JoinU5BU5D_t866AC30388C7DBB6B15E0E0339F6115C945EB7DE;
+struct OutPtU5BU5D_t4AF6E185F465F07282FCB79218DBD346626C8FD2;
 struct OutRecU5BU5D_t95EE7BE6C99E6272EF534C10D22D1C2428CE9AF1;
 struct PolyNodeU5BU5D_tB4D6AD2B8F6A4C22972BB1F21A95E906E9BE0E2D;
 struct TEdgeU5BU5D_tEAF36F99067109A78E79C88C36543478A9C47165;
@@ -135,6 +137,7 @@ struct Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3;
 struct GameObject_t76FEDD663AB33C991A9C9A23129337651094216F;
 struct ICinemachineTargetGroup_t3741E5378B5C1636777589A1BE1811E9E96ADF1B;
 struct IDictionary_t6D03155AF1FA9083817AA5B6AD7DEEACC26AB220;
+struct IDisposable_t030E0496B4E0E4E4F086825007979AF51F7248C5;
 struct IEnumerator_t7B609C2FFA6EB5167D9C62A0C32A21DE2F666DAA;
 struct ISignalSource6D_tFE7BD21AFCDC4FB28E680A0A6885882CB7D88BEB;
 struct MemberFilter_tF644F1AE82F611B677CE1964D5A3277DDA21D553;
@@ -171,6 +174,7 @@ struct TEdge_tD50F9A4EA68576966D4B0E2E64DF310C2A1F307C;
 
 IL2CPP_EXTERN_C RuntimeClass* AnimationCurveU5BU5D_t2C4A38D7EFA8095F32316A4D9CE4CBB6840FB7EC_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* CameraState_tBC57F8D313D0D19718B24CFBD690C089C2140156_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* CinemachineCore_tDF9B8A03802F28C49A554F76418E61DFC12AC0FD_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* CinemachineImpulseDefinition_t3F6992431B5EE7132783754081C473BABF2F4705_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* CinemachineImpulseManager_t19F063379BE6FCCBDB8F5D04F1ABAD447FACBA8F_il2cpp_TypeInfo_var;
@@ -311,6 +315,7 @@ struct AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354_marshaled_pinvok
 struct ContactPoint2D_t16A7EE2DDFB4FA3A09C6554E11F30CEDAEBFA801;
 struct Exception_t_marshaled_com;
 struct Exception_t_marshaled_pinvoke;
+struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_com;
 
 struct AnimationCurveU5BU5D_t2C4A38D7EFA8095F32316A4D9CE4CBB6840FB7EC;
 struct KeyframeU5BU5D_t63250A46914A6A07B2A6689850D47D7D19D80BA3;
@@ -467,16 +472,6 @@ struct OutRec_t6D2B067484E113CECC5ABBC74D55E034B74C9BC8  : public RuntimeObject
 	OutPt_t907B1B75F22C705CB41CEB883769B0623C6EF957* ___BottomPt;
 	PolyNode_t6632AEAB07BC9B993428D4EE7C9E18EDCE3BAD27* ___PolyNode;
 };
-struct PolyNode_t6632AEAB07BC9B993428D4EE7C9E18EDCE3BAD27  : public RuntimeObject
-{
-	PolyNode_t6632AEAB07BC9B993428D4EE7C9E18EDCE3BAD27* ___m_Parent;
-	List_1_tFFB65DC939B85D88A1FA5032C24DA82DD9685B4C* ___m_polygon;
-	int32_t ___m_Index;
-	int32_t ___m_jointype;
-	int32_t ___m_endtype;
-	List_1_t6B363664E747D5A84578F8282376CB04CDF801F4* ___m_Childs;
-	bool ___U3CIsOpenU3Ek__BackingField;
-};
 struct Scanbeam_t889C0F322D9DC0483684E230880893A65C4AF35F  : public RuntimeObject
 {
 	int64_t ___Y;
@@ -517,6 +512,15 @@ struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22
 struct Double_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F 
 {
 	double ___m_value;
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2  : public ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F
+{
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_marshaled_pinvoke
+{
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_marshaled_com
+{
 };
 struct Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C 
 {
@@ -583,27 +587,6 @@ struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915
 		uint8_t Void_t4861ACF8F4594C3437BB48B6E56783494B843915__padding[1];
 	};
 };
-struct CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB 
-{
-	Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___m_Custom;
-	float ___m_Weight;
-};
-struct Clipper_t2CB022C7BAC01EB2FDE672FC25B30C7F7DE2303A  : public ClipperBase_tF5E5EE071153091C61DE73A7046E19212CA00B91
-{
-	int32_t ___m_ClipType;
-	Maxima_tD785E87BCD1D6AE0BFD3A193A48D622098DC2182* ___m_Maxima;
-	TEdge_tD50F9A4EA68576966D4B0E2E64DF310C2A1F307C* ___m_SortedEdges;
-	List_1_t762FB7D85EDD20C0C53C1361807B0DE03606E1E9* ___m_IntersectList;
-	RuntimeObject* ___m_IntersectNodeComparer;
-	bool ___m_ExecuteLocked;
-	int32_t ___m_ClipFillType;
-	int32_t ___m_SubjFillType;
-	List_1_t1FD0176A6AE3A0879983080D9977949695807419* ___m_Joins;
-	List_1_t1FD0176A6AE3A0879983080D9977949695807419* ___m_GhostJoins;
-	bool ___m_UsingPolyTree;
-	bool ___U3CReverseSolutionU3Ek__BackingField;
-	bool ___U3CStrictlySimpleU3Ek__BackingField;
-};
 struct DoublePoint_t934804C749E5C1464C50671424B1A7BB8C598DD1 
 {
 	double ___X;
@@ -625,10 +608,6 @@ struct IntRect_tF487ECDFDA24ED1D258F498973EFA83EE5757F05
 	int64_t ___top;
 	int64_t ___right;
 	int64_t ___bottom;
-};
-struct PolyTree_t6BC36A91ED216BC6148B566797C40651292A9BBD  : public PolyNode_t6632AEAB07BC9B993428D4EE7C9E18EDCE3BAD27
-{
-	List_1_t6B363664E747D5A84578F8282376CB04CDF801F4* ___m_AllPolys;
 };
 struct NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240 
 {
@@ -717,24 +696,17 @@ struct Collision2D_t81E83212C969FDDE2AB84EBCA31502818EEAB85B_marshaled_com
 	ContactPoint2D_t16A7EE2DDFB4FA3A09C6554E11F30CEDAEBFA801* ___m_ReusedContacts;
 	ContactPoint2D_t16A7EE2DDFB4FA3A09C6554E11F30CEDAEBFA801* ___m_LegacyContacts;
 };
-struct ContactPair_t096319945A27108A2DA384393A9ED390BE4356FD 
+struct CollisionPairEventFlags_t9DAB7B8F199928220E6ACA8E669F3B644650FBE6 
 {
-	int32_t ___m_ColliderID;
-	int32_t ___m_OtherColliderID;
-	intptr_t ___m_StartPtr;
-	uint32_t ___m_NbPoints;
-	uint16_t ___m_Flags;
-	uint16_t ___m_Events;
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_ImpulseSum;
+	uint16_t ___value__;
 };
-struct ContactPairHeader_tA8C64AAEEF017149E77A6600B10A10F1A1C5648B 
+struct CollisionPairFlags_tD05FDF8CD2FA43B2AAC0078E19DB27DF01B2BA98 
 {
-	int32_t ___m_BodyID;
-	int32_t ___m_OtherBodyID;
-	intptr_t ___m_StartPtr;
-	uint32_t ___m_NbPairs;
-	uint16_t ___m_Flags;
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_RelativeVelocity;
+	uint16_t ___value__;
+};
+struct CollisionPairHeaderFlags_tBA40F470BC1564B84C3093CEA5761804FA0650C3 
+{
+	uint16_t ___value__;
 };
 struct Exception_t  : public RuntimeObject
 {
@@ -793,6 +765,207 @@ struct Exception_t_marshaled_com
 	Il2CppSafeArray* ___native_trace_ips;
 	int32_t ___caught_in_unmanaged;
 };
+struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C  : public RuntimeObject
+{
+	intptr_t ___m_CachedPtr;
+};
+struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_pinvoke
+{
+	intptr_t ___m_CachedPtr;
+};
+struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_com
+{
+	intptr_t ___m_CachedPtr;
+};
+struct RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B 
+{
+	intptr_t ___value;
+};
+struct GateFitMode_tF23898CD8CAC571648EC68C62D28FF17852C830C 
+{
+	int32_t ___value__;
+};
+struct BlendHintValue_t3E71BEE9E94B88F3A92003E9A7DCBA236B896688 
+{
+	int32_t ___value__;
+};
+struct Stage_t4DAE8B473AEC6FEBE5243168BCC59FBC3CFF5A85 
+{
+	int32_t ___value__;
+};
+struct ImpulseShapes_tC6D5F93BC2927249B4B12F5A3FA6E7032971AED7 
+{
+	int32_t ___value__;
+};
+struct ImpulseTypes_tEA63DB9E386309BA7A2B710CD3AE85BB9163C7B2 
+{
+	int32_t ___value__;
+};
+struct LegacySignalSource_tE86BB3F8A45E424A23A35606DB6A8852633FACF4  : public RuntimeObject
+{
+	CinemachineImpulseDefinition_t3F6992431B5EE7132783754081C473BABF2F4705* ___m_Def;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_Velocity;
+	float ___m_StartTimeOffset;
+};
+struct RepeatMode_t154866B1F8BF4A53A17EFAD6E9397B3D2622BC99 
+{
+	int32_t ___value__;
+};
+struct SignalSource_tDDF94C399376B07EC3E5A1F28A10A22ECDF4560E  : public RuntimeObject
+{
+	CinemachineImpulseDefinition_t3F6992431B5EE7132783754081C473BABF2F4705* ___m_Def;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_Velocity;
+};
+struct ImpulseReaction_t2D8610BADC4C769F3E5E84D416DED789249A8A8E 
+{
+	NoiseSettings_tFCB86EB3704D64D89D6D747BEAE83E1757EF68F1* ___m_SecondaryNoise;
+	float ___m_AmplitudeGain;
+	float ___m_FrequencyGain;
+	float ___m_Duration;
+	float ___m_CurrentAmount;
+	float ___m_CurrentTime;
+	float ___m_CurrentDamping;
+	bool ___m_Initialized;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_NoiseOffsets;
+};
+struct ImpulseReaction_t2D8610BADC4C769F3E5E84D416DED789249A8A8E_marshaled_pinvoke
+{
+	NoiseSettings_tFCB86EB3704D64D89D6D747BEAE83E1757EF68F1* ___m_SecondaryNoise;
+	float ___m_AmplitudeGain;
+	float ___m_FrequencyGain;
+	float ___m_Duration;
+	float ___m_CurrentAmount;
+	float ___m_CurrentTime;
+	float ___m_CurrentDamping;
+	int32_t ___m_Initialized;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_NoiseOffsets;
+};
+struct ImpulseReaction_t2D8610BADC4C769F3E5E84D416DED789249A8A8E_marshaled_com
+{
+	NoiseSettings_tFCB86EB3704D64D89D6D747BEAE83E1757EF68F1* ___m_SecondaryNoise;
+	float ___m_AmplitudeGain;
+	float ___m_FrequencyGain;
+	float ___m_Duration;
+	float ___m_CurrentAmount;
+	float ___m_CurrentTime;
+	float ___m_CurrentDamping;
+	int32_t ___m_Initialized;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_NoiseOffsets;
+};
+struct StandbyUpdateMode_t4FC8EA706A415E8EBFB09164D31BE8EAC398B8F7 
+{
+	int32_t ___value__;
+};
+struct ClipType_t971653B1A41B9F9D5B1A86256678B03AEF99E7BA 
+{
+	int32_t ___value__;
+};
+struct Direction_tC4E4A365C32445BD1C0B0E729640748C55B9C6AA 
+{
+	int32_t ___value__;
+};
+struct EdgeSide_tA554FA7871BCC6331DFA9D53F81E6D3C942C5376 
+{
+	int32_t ___value__;
+};
+struct EndType_t629B14D6F1AB64569FFF50EAB26F01A2A060590E 
+{
+	int32_t ___value__;
+};
+struct IntersectNode_tB1CF83EEBA90B0A14D3D26B281FB389770AF60CC  : public RuntimeObject
+{
+	TEdge_tD50F9A4EA68576966D4B0E2E64DF310C2A1F307C* ___Edge1;
+	TEdge_tD50F9A4EA68576966D4B0E2E64DF310C2A1F307C* ___Edge2;
+	IntPoint_tB90EC7E3658ADAC927B4405BEFE1CBAD98BBC674 ___Pt;
+};
+struct Join_tC247F825C3474E3553B7007354172DE328084DBF  : public RuntimeObject
+{
+	OutPt_t907B1B75F22C705CB41CEB883769B0623C6EF957* ___OutPt1;
+	OutPt_t907B1B75F22C705CB41CEB883769B0623C6EF957* ___OutPt2;
+	IntPoint_tB90EC7E3658ADAC927B4405BEFE1CBAD98BBC674 ___OffPt;
+};
+struct JoinType_t41D7908F30EC60B745106748F9BAAEDF4B5AB8C0 
+{
+	int32_t ___value__;
+};
+struct OutPt_t907B1B75F22C705CB41CEB883769B0623C6EF957  : public RuntimeObject
+{
+	int32_t ___Idx;
+	IntPoint_tB90EC7E3658ADAC927B4405BEFE1CBAD98BBC674 ___Pt;
+	OutPt_t907B1B75F22C705CB41CEB883769B0623C6EF957* ___Next;
+	OutPt_t907B1B75F22C705CB41CEB883769B0623C6EF957* ___Prev;
+};
+struct PolyFillType_tBBC050CBBFCABC36F5809F8F7EFE035B45A2D535 
+{
+	int32_t ___value__;
+};
+struct PolyType_t1B821CC071CEFACF8CF0AC3BB6DC008C6ECC40B0 
+{
+	int32_t ___value__;
+};
+struct OverrideModes_t79FC427C0E3A4372749712DF145E3E414AF65556 
+{
+	int32_t ___value__;
+};
+struct TransformNoiseParams_t1056C699265C70FECE1BDF04D38CF74997002A91 
+{
+	NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240 ___X;
+	NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240 ___Y;
+	NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240 ___Z;
+};
+struct TransformNoiseParams_t1056C699265C70FECE1BDF04D38CF74997002A91_marshaled_pinvoke
+{
+	NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240_marshaled_pinvoke ___X;
+	NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240_marshaled_pinvoke ___Y;
+	NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240_marshaled_pinvoke ___Z;
+};
+struct TransformNoiseParams_t1056C699265C70FECE1BDF04D38CF74997002A91_marshaled_com
+{
+	NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240_marshaled_com ___X;
+	NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240_marshaled_com ___Y;
+	NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240_marshaled_com ___Z;
+};
+struct Mode_t4C02639E19E153AE2D3A6C0AC65805023DDE08C3 
+{
+	int32_t ___value__;
+};
+struct DirectionMode_tA265C1118E08C85BDFA61EA08E2A3DCFB2781456 
+{
+	int32_t ___value__;
+};
+struct DissipationMode_tDA74050463A31F7AD3730B75E48C664D99C4B374 
+{
+	int32_t ___value__;
+};
+struct NodeType_tADEA64804137FC4F65DC1F0988CB0BF17E25FEF8 
+{
+	int32_t ___value__;
+};
+struct Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
+{
+};
+struct ContactPair_t096319945A27108A2DA384393A9ED390BE4356FD 
+{
+	int32_t ___m_ColliderID;
+	int32_t ___m_OtherColliderID;
+	intptr_t ___m_StartPtr;
+	uint32_t ___m_NbPoints;
+	uint16_t ___m_Flags;
+	uint16_t ___m_Events;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_ImpulseSum;
+};
+struct ContactPairHeader_tA8C64AAEEF017149E77A6600B10A10F1A1C5648B 
+{
+	int32_t ___m_BodyID;
+	int32_t ___m_OtherBodyID;
+	intptr_t ___m_StartPtr;
+	uint32_t ___m_NbPairs;
+	uint16_t ___m_Flags;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_RelativeVelocity;
+};
+struct GameObject_t76FEDD663AB33C991A9C9A23129337651094216F  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
+{
+};
 struct LensSettings_t6DAB2F204EC22686BF4397E0871B4875414A84FE 
 {
 	float ___FieldOfView;
@@ -838,87 +1011,92 @@ struct LensSettings_t6DAB2F204EC22686BF4397E0871B4875414A84FE_marshaled_com
 	int32_t ___m_OrthoFromCamera;
 	int32_t ___m_PhysicalFromCamera;
 };
-struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C  : public RuntimeObject
+struct ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
 {
-	intptr_t ___m_CachedPtr;
 };
-struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_pinvoke
+struct ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A_marshaled_pinvoke : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_pinvoke
 {
-	intptr_t ___m_CachedPtr;
 };
-struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_com
+struct ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A_marshaled_com : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_com
 {
-	intptr_t ___m_CachedPtr;
 };
-struct RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B 
+struct Type_t  : public MemberInfo_t
 {
-	intptr_t ___value;
+	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B ____impl;
 };
-struct LegacySignalSource_tE86BB3F8A45E424A23A35606DB6A8852633FACF4  : public RuntimeObject
+struct CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB 
 {
-	CinemachineImpulseDefinition_t3F6992431B5EE7132783754081C473BABF2F4705* ___m_Def;
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_Velocity;
-	float ___m_StartTimeOffset;
+	Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___m_Custom;
+	float ___m_Weight;
 };
-struct SignalSource_tDDF94C399376B07EC3E5A1F28A10A22ECDF4560E  : public RuntimeObject
+struct CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB_marshaled_pinvoke
 {
-	CinemachineImpulseDefinition_t3F6992431B5EE7132783754081C473BABF2F4705* ___m_Def;
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_Velocity;
+	Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_pinvoke ___m_Custom;
+	float ___m_Weight;
 };
-struct ImpulseReaction_t2D8610BADC4C769F3E5E84D416DED789249A8A8E 
+struct CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB_marshaled_com
 {
-	NoiseSettings_tFCB86EB3704D64D89D6D747BEAE83E1757EF68F1* ___m_SecondaryNoise;
-	float ___m_AmplitudeGain;
-	float ___m_FrequencyGain;
-	float ___m_Duration;
-	float ___m_CurrentAmount;
-	float ___m_CurrentTime;
-	float ___m_CurrentDamping;
-	bool ___m_Initialized;
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_NoiseOffsets;
+	Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_com* ___m_Custom;
+	float ___m_Weight;
 };
-struct ImpulseReaction_t2D8610BADC4C769F3E5E84D416DED789249A8A8E_marshaled_pinvoke
+struct EnvelopeDefinition_tC875D919977CE4B1876A7CAAF64F9A087C86207E 
 {
-	NoiseSettings_tFCB86EB3704D64D89D6D747BEAE83E1757EF68F1* ___m_SecondaryNoise;
-	float ___m_AmplitudeGain;
-	float ___m_FrequencyGain;
-	float ___m_Duration;
-	float ___m_CurrentAmount;
-	float ___m_CurrentTime;
-	float ___m_CurrentDamping;
-	int32_t ___m_Initialized;
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_NoiseOffsets;
+	AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354* ___m_AttackShape;
+	AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354* ___m_DecayShape;
+	float ___m_AttackTime;
+	float ___m_SustainTime;
+	float ___m_DecayTime;
+	bool ___m_ScaleWithImpact;
+	bool ___m_HoldForever;
 };
-struct ImpulseReaction_t2D8610BADC4C769F3E5E84D416DED789249A8A8E_marshaled_com
+struct EnvelopeDefinition_tC875D919977CE4B1876A7CAAF64F9A087C86207E_marshaled_pinvoke
 {
-	NoiseSettings_tFCB86EB3704D64D89D6D747BEAE83E1757EF68F1* ___m_SecondaryNoise;
-	float ___m_AmplitudeGain;
-	float ___m_FrequencyGain;
-	float ___m_Duration;
-	float ___m_CurrentAmount;
-	float ___m_CurrentTime;
-	float ___m_CurrentDamping;
-	int32_t ___m_Initialized;
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_NoiseOffsets;
+	AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354_marshaled_pinvoke ___m_AttackShape;
+	AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354_marshaled_pinvoke ___m_DecayShape;
+	float ___m_AttackTime;
+	float ___m_SustainTime;
+	float ___m_DecayTime;
+	int32_t ___m_ScaleWithImpact;
+	int32_t ___m_HoldForever;
 };
-struct IntersectNode_tB1CF83EEBA90B0A14D3D26B281FB389770AF60CC  : public RuntimeObject
+struct EnvelopeDefinition_tC875D919977CE4B1876A7CAAF64F9A087C86207E_marshaled_com
 {
-	TEdge_tD50F9A4EA68576966D4B0E2E64DF310C2A1F307C* ___Edge1;
-	TEdge_tD50F9A4EA68576966D4B0E2E64DF310C2A1F307C* ___Edge2;
-	IntPoint_tB90EC7E3658ADAC927B4405BEFE1CBAD98BBC674 ___Pt;
+	AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354_marshaled_com* ___m_AttackShape;
+	AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354_marshaled_com* ___m_DecayShape;
+	float ___m_AttackTime;
+	float ___m_SustainTime;
+	float ___m_DecayTime;
+	int32_t ___m_ScaleWithImpact;
+	int32_t ___m_HoldForever;
 };
-struct Join_tC247F825C3474E3553B7007354172DE328084DBF  : public RuntimeObject
+struct Clipper_t2CB022C7BAC01EB2FDE672FC25B30C7F7DE2303A  : public ClipperBase_tF5E5EE071153091C61DE73A7046E19212CA00B91
 {
-	OutPt_t907B1B75F22C705CB41CEB883769B0623C6EF957* ___OutPt1;
-	OutPt_t907B1B75F22C705CB41CEB883769B0623C6EF957* ___OutPt2;
-	IntPoint_tB90EC7E3658ADAC927B4405BEFE1CBAD98BBC674 ___OffPt;
+	int32_t ___m_ClipType;
+	Maxima_tD785E87BCD1D6AE0BFD3A193A48D622098DC2182* ___m_Maxima;
+	TEdge_tD50F9A4EA68576966D4B0E2E64DF310C2A1F307C* ___m_SortedEdges;
+	List_1_t762FB7D85EDD20C0C53C1361807B0DE03606E1E9* ___m_IntersectList;
+	RuntimeObject* ___m_IntersectNodeComparer;
+	bool ___m_ExecuteLocked;
+	int32_t ___m_ClipFillType;
+	int32_t ___m_SubjFillType;
+	List_1_t1FD0176A6AE3A0879983080D9977949695807419* ___m_Joins;
+	List_1_t1FD0176A6AE3A0879983080D9977949695807419* ___m_GhostJoins;
+	bool ___m_UsingPolyTree;
+	bool ___U3CReverseSolutionU3Ek__BackingField;
+	bool ___U3CStrictlySimpleU3Ek__BackingField;
 };
-struct OutPt_t907B1B75F22C705CB41CEB883769B0623C6EF957  : public RuntimeObject
+struct ClipperException_t88B1DB246A93C0860AFD818A9BE49B74D84C28D5  : public Exception_t
 {
-	int32_t ___Idx;
-	IntPoint_tB90EC7E3658ADAC927B4405BEFE1CBAD98BBC674 ___Pt;
-	OutPt_t907B1B75F22C705CB41CEB883769B0623C6EF957* ___Next;
-	OutPt_t907B1B75F22C705CB41CEB883769B0623C6EF957* ___Prev;
+};
+struct PolyNode_t6632AEAB07BC9B993428D4EE7C9E18EDCE3BAD27  : public RuntimeObject
+{
+	PolyNode_t6632AEAB07BC9B993428D4EE7C9E18EDCE3BAD27* ___m_Parent;
+	List_1_tFFB65DC939B85D88A1FA5032C24DA82DD9685B4C* ___m_polygon;
+	int32_t ___m_Index;
+	int32_t ___m_jointype;
+	int32_t ___m_endtype;
+	List_1_t6B363664E747D5A84578F8282376CB04CDF801F4* ___m_Childs;
+	bool ___U3CIsOpenU3Ek__BackingField;
 };
 struct TEdge_tD50F9A4EA68576966D4B0E2E64DF310C2A1F307C  : public RuntimeObject
 {
@@ -941,23 +1119,8 @@ struct TEdge_tD50F9A4EA68576966D4B0E2E64DF310C2A1F307C  : public RuntimeObject
 	TEdge_tD50F9A4EA68576966D4B0E2E64DF310C2A1F307C* ___NextInSEL;
 	TEdge_tD50F9A4EA68576966D4B0E2E64DF310C2A1F307C* ___PrevInSEL;
 };
-struct TransformNoiseParams_t1056C699265C70FECE1BDF04D38CF74997002A91 
+struct Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA  : public Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3
 {
-	NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240 ___X;
-	NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240 ___Y;
-	NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240 ___Z;
-};
-struct TransformNoiseParams_t1056C699265C70FECE1BDF04D38CF74997002A91_marshaled_pinvoke
-{
-	NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240_marshaled_pinvoke ___X;
-	NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240_marshaled_pinvoke ___Y;
-	NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240_marshaled_pinvoke ___Z;
-};
-struct TransformNoiseParams_t1056C699265C70FECE1BDF04D38CF74997002A91_marshaled_com
-{
-	NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240_marshaled_com ___X;
-	NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240_marshaled_com ___Y;
-	NoiseParams_tFEE1B5C35BAFA843F32A882125A5967213B50240_marshaled_com ___Z;
 };
 struct CameraState_tBC57F8D313D0D19718B24CFBD690C089C2140156 
 {
@@ -990,10 +1153,10 @@ struct CameraState_tBC57F8D313D0D19718B24CFBD690C089C2140156_marshaled_pinvoke
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___PositionCorrection;
 	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___OrientationCorrection;
 	int32_t ___BlendHint;
-	CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB ___mCustom0;
-	CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB ___mCustom1;
-	CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB ___mCustom2;
-	CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB ___mCustom3;
+	CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB_marshaled_pinvoke ___mCustom0;
+	CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB_marshaled_pinvoke ___mCustom1;
+	CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB_marshaled_pinvoke ___mCustom2;
+	CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB_marshaled_pinvoke ___mCustom3;
 	List_1_tECB13E82883EA864AEBA60A256302E1C8CFD6EF4* ___m_CustomOverflow;
 	int32_t ___U3CNumCustomBlendablesU3Ek__BackingField;
 };
@@ -1009,74 +1172,12 @@ struct CameraState_tBC57F8D313D0D19718B24CFBD690C089C2140156_marshaled_com
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___PositionCorrection;
 	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___OrientationCorrection;
 	int32_t ___BlendHint;
-	CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB ___mCustom0;
-	CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB ___mCustom1;
-	CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB ___mCustom2;
-	CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB ___mCustom3;
+	CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB_marshaled_com ___mCustom0;
+	CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB_marshaled_com ___mCustom1;
+	CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB_marshaled_com ___mCustom2;
+	CustomBlendable_t99FF1C1C42F08A7265E2842451D5CB2F4BFF16CB_marshaled_com ___mCustom3;
 	List_1_tECB13E82883EA864AEBA60A256302E1C8CFD6EF4* ___m_CustomOverflow;
 	int32_t ___U3CNumCustomBlendablesU3Ek__BackingField;
-};
-struct Collision_tBCC6AEBD9A63E6DA2E50660DAC03CDCB1FF7A9B0  : public RuntimeObject
-{
-	ContactPairHeader_tA8C64AAEEF017149E77A6600B10A10F1A1C5648B ___m_Header;
-	ContactPair_t096319945A27108A2DA384393A9ED390BE4356FD ___m_Pair;
-	bool ___m_Flipped;
-	ContactPointU5BU5D_t3570603E8D0685B71B3D8BA07031674B00C5E411* ___m_LegacyContacts;
-};
-struct Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
-{
-};
-struct GameObject_t76FEDD663AB33C991A9C9A23129337651094216F  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
-{
-};
-struct ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
-{
-};
-struct ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A_marshaled_pinvoke : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_pinvoke
-{
-};
-struct ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A_marshaled_com : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_com
-{
-};
-struct Type_t  : public MemberInfo_t
-{
-	RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B ____impl;
-};
-struct EnvelopeDefinition_tC875D919977CE4B1876A7CAAF64F9A087C86207E 
-{
-	AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354* ___m_AttackShape;
-	AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354* ___m_DecayShape;
-	float ___m_AttackTime;
-	float ___m_SustainTime;
-	float ___m_DecayTime;
-	bool ___m_ScaleWithImpact;
-	bool ___m_HoldForever;
-};
-struct EnvelopeDefinition_tC875D919977CE4B1876A7CAAF64F9A087C86207E_marshaled_pinvoke
-{
-	AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354_marshaled_pinvoke ___m_AttackShape;
-	AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354_marshaled_pinvoke ___m_DecayShape;
-	float ___m_AttackTime;
-	float ___m_SustainTime;
-	float ___m_DecayTime;
-	int32_t ___m_ScaleWithImpact;
-	int32_t ___m_HoldForever;
-};
-struct EnvelopeDefinition_tC875D919977CE4B1876A7CAAF64F9A087C86207E_marshaled_com
-{
-	AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354_marshaled_com* ___m_AttackShape;
-	AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354_marshaled_com* ___m_DecayShape;
-	float ___m_AttackTime;
-	float ___m_SustainTime;
-	float ___m_DecayTime;
-	int32_t ___m_ScaleWithImpact;
-	int32_t ___m_HoldForever;
-};
-struct ClipperException_t88B1DB246A93C0860AFD818A9BE49B74D84C28D5  : public Exception_t
-{
-};
-struct Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA  : public Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3
-{
 };
 struct CinemachineImpulseDefinition_t3F6992431B5EE7132783754081C473BABF2F4705  : public RuntimeObject
 {
@@ -1100,6 +1201,13 @@ struct CinemachineImpulseDefinition_t3F6992431B5EE7132783754081C473BABF2F4705  :
 };
 struct Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76  : public Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3
 {
+};
+struct Collision_tBCC6AEBD9A63E6DA2E50660DAC03CDCB1FF7A9B0  : public RuntimeObject
+{
+	ContactPairHeader_tA8C64AAEEF017149E77A6600B10A10F1A1C5648B ___m_Header;
+	ContactPair_t096319945A27108A2DA384393A9ED390BE4356FD ___m_Pair;
+	bool ___m_Flipped;
+	ContactPointU5BU5D_t3570603E8D0685B71B3D8BA07031674B00C5E411* ___m_LegacyContacts;
 };
 struct Rigidbody_t268697F5A994213ED97393309870968BC1C7393C  : public Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3
 {
@@ -1126,6 +1234,10 @@ struct ImpulseEvent_t47B7A7F746F12CA62759422A5F71DBBD4C53DC59  : public RuntimeO
 	float ___m_DissipationDistance;
 	float ___m_CustomDissipation;
 	float ___m_PropagationSpeed;
+};
+struct PolyTree_t6BC36A91ED216BC6148B566797C40651292A9BBD  : public PolyNode_t6632AEAB07BC9B993428D4EE7C9E18EDCE3BAD27
+{
+	List_1_t6B363664E747D5A84578F8282376CB04CDF801F4* ___m_AllPolys;
 };
 struct CinemachineFixedSignal_tCEDE2C2D626CB2C9F44ECED3876E99328471BE5C  : public SignalSourceAsset_t187094A020026D70B16096697802137226248D2B
 {
@@ -1307,10 +1419,6 @@ struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_StaticFields
 {
 	int32_t ___OffsetOfInstanceIDInCPlusPlusObject;
 };
-struct CameraState_tBC57F8D313D0D19718B24CFBD690C089C2140156_StaticFields
-{
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___kNoPoint;
-};
 struct Type_t_StaticFields
 {
 	Binder_t91BFCE95A7057FADF4D8A1A342AFE52872246235* ___s_defaultBinder;
@@ -1320,6 +1428,10 @@ struct Type_t_StaticFields
 	MemberFilter_tF644F1AE82F611B677CE1964D5A3277DDA21D553* ___FilterAttribute;
 	MemberFilter_tF644F1AE82F611B677CE1964D5A3277DDA21D553* ___FilterName;
 	MemberFilter_tF644F1AE82F611B677CE1964D5A3277DDA21D553* ___FilterNameIgnoreCase;
+};
+struct CameraState_tBC57F8D313D0D19718B24CFBD690C089C2140156_StaticFields
+{
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___kNoPoint;
 };
 struct CinemachineImpulseDefinition_t3F6992431B5EE7132783754081C473BABF2F4705_StaticFields
 {
@@ -3765,6 +3877,30 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CinemachineImpulseDefinition__ctor_m9A79
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SignalSource__ctor_mD776DEC5B0B9B1370EC2E238B46C5AD936C9B0B5 (SignalSource_tDDF94C399376B07EC3E5A1F28A10A22ECDF4560E* __this, CinemachineImpulseDefinition_t3F6992431B5EE7132783754081C473BABF2F4705* ___0_def, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_velocity, const RuntimeMethod* method) 
 {
 	{
@@ -3998,6 +4134,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CinemachineImpulseListener_Reset_m7B09DF
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CinemachineImpulseListener_PostPipelineStageCallback_mCEF55A67F8286EA75D6B8930474DFD4F70B6F315 (CinemachineImpulseListener_tEC63D9DEEDB2F4C45B76D36F9593704722EC2039* __this, CinemachineVirtualCameraBase_tAD070AA799E9D3990F0B2DA9AC5889CF138261DE* ___0_vcam, int32_t ___1_stage, CameraState_tBC57F8D313D0D19718B24CFBD690C089C2140156* ___2_state, float ___3_deltaTime, const RuntimeMethod* method) 
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&CameraState_tBC57F8D313D0D19718B24CFBD690C089C2140156_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 V_1;
@@ -4030,6 +4172,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CinemachineImpulseListener_PostPipelineS
 		CinemachineImpulseManager_t19F063379BE6FCCBDB8F5D04F1ABAD447FACBA8F* L_3;
 		L_3 = CinemachineImpulseManager_get_Instance_mCBBB7EE190D29704E4F44241A50BC2F6F23EB179(NULL);
 		CameraState_tBC57F8D313D0D19718B24CFBD690C089C2140156* L_4 = ___2_state;
+		il2cpp_codegen_runtime_class_init_inline(CameraState_tBC57F8D313D0D19718B24CFBD690C089C2140156_il2cpp_TypeInfo_var);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_5;
 		L_5 = CameraState_get_FinalPosition_m4D482D1F3E008068C2151FC24FD85CB6F603AE12(L_4, NULL);
 		bool L_6 = __this->___m_Use2DDistance;
@@ -5661,6 +5804,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ImpulseEvent__ctor_mC5F7C05F235EB65CED1F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CinemachineImpulseSource_OnValidate_m5AF490404689D1FD50FA16C1A3621FF85B4E9D28 (CinemachineImpulseSource_t48D0DCECD3CD8432BF4442EB45399BBD383A1B83* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7251,6 +7410,62 @@ IL2CPP_EXTERN_C  void IntRect__ctor_m40FEB4C1F3B4B8123E190855A65E09E81D766961_Ad
 	_thisAdjusted = reinterpret_cast<IntRect_tF487ECDFDA24ED1D258F498973EFA83EE5757F05*>(__this + _offset);
 	IntRect__ctor_m40FEB4C1F3B4B8123E190855A65E09E81D766961(_thisAdjusted, ___0_ir, method);
 }
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -18933,13 +19148,15 @@ IL_0045_1:
 
 CATCH_0047:
 	{
+		RuntimeObject* L_7 = ((RuntimeObject*)IL2CPP_GET_ACTIVE_EXCEPTION(RuntimeObject*));;
 		__this->___m_SortedEdges = (TEdge_tD50F9A4EA68576966D4B0E2E64DF310C2A1F307C*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_SortedEdges), (void*)(TEdge_tD50F9A4EA68576966D4B0E2E64DF310C2A1F307C*)NULL);
-		List_1_t762FB7D85EDD20C0C53C1361807B0DE03606E1E9* L_7 = __this->___m_IntersectList;
-		List_1_Clear_m3952313659E515B4F6B923C7A3AD5265CAA5D42E_inline(L_7, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&List_1_Clear_m3952313659E515B4F6B923C7A3AD5265CAA5D42E_RuntimeMethod_var)));
-		ClipperException_t88B1DB246A93C0860AFD818A9BE49B74D84C28D5* L_8 = (ClipperException_t88B1DB246A93C0860AFD818A9BE49B74D84C28D5*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&ClipperException_t88B1DB246A93C0860AFD818A9BE49B74D84C28D5_il2cpp_TypeInfo_var)));
-		ClipperException__ctor_mD885137DA5F4345C11209699548F776B93180F1A(L_8, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral663C41C05AB8CEC11013C2708A41A43B20004AB6)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_8, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Clipper_ProcessIntersections_m561C929E8754747190448077F511FC1B74093FD3_RuntimeMethod_var)));
+		List_1_t762FB7D85EDD20C0C53C1361807B0DE03606E1E9* L_8 = __this->___m_IntersectList;
+		List_1_Clear_m3952313659E515B4F6B923C7A3AD5265CAA5D42E_inline(L_8, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&List_1_Clear_m3952313659E515B4F6B923C7A3AD5265CAA5D42E_RuntimeMethod_var)));
+		ClipperException_t88B1DB246A93C0860AFD818A9BE49B74D84C28D5* L_9 = (ClipperException_t88B1DB246A93C0860AFD818A9BE49B74D84C28D5*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&ClipperException_t88B1DB246A93C0860AFD818A9BE49B74D84C28D5_il2cpp_TypeInfo_var)));
+		ClipperException__ctor_mD885137DA5F4345C11209699548F776B93180F1A(L_9, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral663C41C05AB8CEC11013C2708A41A43B20004AB6)), NULL);
+		IL2CPP_POP_ACTIVE_EXCEPTION(Exception_t*);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_9, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Clipper_ProcessIntersections_m561C929E8754747190448077F511FC1B74093FD3_RuntimeMethod_var)));
 	}
 
 IL_0065:
@@ -18951,8 +19168,8 @@ IL_0065:
 
 IL_006e:
 	{
-		bool L_9 = V_0;
-		return L_9;
+		bool L_10 = V_0;
+		return L_10;
 	}
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Clipper_BuildIntersectList_m6B5DA2A81AF660F5471A530B97383E223BEECB66 (Clipper_t2CB022C7BAC01EB2FDE672FC25B30C7F7DE2303A* __this, int64_t ___0_topY, const RuntimeMethod* method) 

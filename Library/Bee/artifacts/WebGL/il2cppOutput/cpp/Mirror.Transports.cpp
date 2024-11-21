@@ -213,6 +213,7 @@ IL2CPP_EXTERN_C RuntimeClass* Action_3_tE12BE99979C339D5F96975616AC3B9856017C9E4
 IL2CPP_EXTERN_C RuntimeClass* Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Application_tDB03BE91CDF0ACA614A5E0B67CFB77C44EB19B21_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Byte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Client_t20C4A90FC449D8BE16EC6ED1368A5AB3AC647042_il2cpp_TypeInfo_var;
@@ -469,11 +470,6 @@ struct Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F  : public RuntimeObject
 struct EndPoint_t6233F4E2EB9F0F2D36E187F12BE050E6D8B73564  : public RuntimeObject
 {
 };
-struct GUILayoutOption_t8B0AA056521747053A3176FCC43E9C3608940A14  : public RuntimeObject
-{
-	int32_t ___type;
-	RuntimeObject* ___value;
-};
 struct IPAddress_t2F4486449B0D73FF2D3B36A9FE5E9C3F63116484  : public RuntimeObject
 {
 	uint32_t ____addressOrScopeId;
@@ -508,27 +504,6 @@ struct KcpConfig_t0C03722728EF98EB68D698A5DE03B2EEA9921FD3  : public RuntimeObje
 	uint32_t ___ReceiveWindowSize;
 	int32_t ___Timeout;
 	uint32_t ___MaxRetransmits;
-};
-struct KcpPeer_t9877F9EA5CC2640D1A178EF2CE3097EB7E4309A2  : public RuntimeObject
-{
-	Kcp_t7FEB7DEEF1C5282CCA0714358DF71E192BAB76C3* ___kcp;
-	uint32_t ___cookie;
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___receivedCookie;
-	Action_1_t189B149227C4EB1A8EEBCBA074BF4012E9F88341* ___RawSend;
-	int32_t ___state;
-	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___OnAuthenticated;
-	Action_2_tC2D3CA832F868E9436EA0A3271ADA9189C1F14ED* ___OnData;
-	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___OnDisconnected;
-	Action_2_t380281766D86EEF86589EE7A291E1BCF6FFD9487* ___OnError;
-	int32_t ___timeout;
-	uint32_t ___lastReceiveTime;
-	Stopwatch_tA188A210449E22C07053A7D3014DD182C7369043* ___watch;
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___kcpMessageBuffer;
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___kcpSendBuffer;
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___rawSendBuffer;
-	uint32_t ___lastPingTime;
-	int32_t ___unreliableMax;
-	int32_t ___reliableMax;
 };
 struct KcpServer_tE26814B163D77A83F9DE98DE794A92C1C34475F6  : public RuntimeObject
 {
@@ -566,18 +541,6 @@ struct Request_t66F0454D69D434044C85E5CD9F0B6547CFEA1F99  : public RuntimeObject
 struct SendLoopConfig_t6F4F1EDAF78DEB718D70B793B1F21ECCC96E30D3  : public RuntimeObject
 {
 };
-struct SimpleWebClient_tCFEE532F30E1840D2689B33DF262C4DFE22FCB1A  : public RuntimeObject
-{
-	int32_t ___maxMessagesPerTick;
-	int32_t ___maxMessageSize;
-	ConcurrentQueue_1_t52D050BE2447BB755A18789167D00E4A1B1C539E* ___receiveQueue;
-	BufferPool_t3B50B9E8892F6564D18C8894D032DDD2B542B390* ___bufferPool;
-	int32_t ___state;
-	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___onConnect;
-	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___onDisconnect;
-	Action_1_t189B149227C4EB1A8EEBCBA074BF4012E9F88341* ___onData;
-	Action_1_tAFBD759E01ADE1CCF9C2015D5EFB3E69A9F26F04* ___onError;
-};
 struct SimpleWebServer_t4990C2DFCBD4DA1E9237555DF344A0490BBF5B06  : public RuntimeObject
 {
 	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* ___onConnect;
@@ -611,16 +574,6 @@ struct TcpListener_t306B041DAC7763F1A05DAA9FA9F4BAADEF94EF82  : public RuntimeOb
 };
 struct UnitySourceGeneratedAssemblyMonoScriptTypes_v1_t573BB35AF358583D6FA4978B71AA161875520496  : public RuntimeObject
 {
-};
-struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E  : public RuntimeObject
-{
-	String_t* ___m_String;
-	String_t* ___m_originalUnicodeString;
-	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax;
-	String_t* ___m_DnsSafeHost;
-	uint64_t ___m_Flags;
-	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info;
-	bool ___m_iriParsing;
 };
 struct UriBuilder_t7931690A4195FCF7400D95D3107C3FB1D55A1C72  : public RuntimeObject
 {
@@ -684,6 +637,15 @@ struct Client_t20C4A90FC449D8BE16EC6ED1368A5AB3AC647042  : public Common_tA69BE9
 struct Double_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F 
 {
 	double ___m_value;
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2  : public ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F
+{
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_marshaled_pinvoke
+{
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_marshaled_com
+{
 };
 struct IPEndPoint_t2F09CBA7A808B67724B4E2954EEDC46D910F4ECB  : public EndPoint_t6233F4E2EB9F0F2D36E187F12BE050E6D8B73564
 {
@@ -758,27 +720,6 @@ struct Server_t88217EB567B7CA28FDDD19E6A674041E18541AB3  : public Common_tA69BE9
 struct Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C 
 {
 	float ___m_value;
-};
-struct SslConfig_t0FD81226CCD8FC5913098C50129E13DE7D96FD42 
-{
-	bool ___enabled;
-	String_t* ___certPath;
-	String_t* ___certPassword;
-	int32_t ___sslProtocols;
-};
-struct SslConfig_t0FD81226CCD8FC5913098C50129E13DE7D96FD42_marshaled_pinvoke
-{
-	int32_t ___enabled;
-	char* ___certPath;
-	char* ___certPassword;
-	int32_t ___sslProtocols;
-};
-struct SslConfig_t0FD81226CCD8FC5913098C50129E13DE7D96FD42_marshaled_com
-{
-	int32_t ___enabled;
-	Il2CppChar* ___certPath;
-	Il2CppChar* ___certPassword;
-	int32_t ___sslProtocols;
 };
 struct TcpConfig_t00D71EACC90569D0602294B684E2F3A0373AFE06 
 {
@@ -870,6 +811,14 @@ struct MonoScriptData_tFA621667E45D636481271F259BD5806A71CA98C0_marshaled_com
 	int32_t ___TotalFiles;
 	int32_t ___IsEditorOnly;
 };
+struct ByteEnum_t2A464EF5EC59CBA8ED5E194537D5832168B1A692 
+{
+	uint8_t ___value__;
+};
+struct ClientState_t0066C0D41190165A07DF749ECC9DD6D78AAF9814 
+{
+	int32_t ___value__;
+};
 struct Delegate_t  : public RuntimeObject
 {
 	intptr_t ___method_ptr;
@@ -917,6 +866,10 @@ struct Delegate_t_marshaled_com
 	MethodInfo_t* ___original_method_info;
 	DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E* ___data;
 	int32_t ___method_is_virtual;
+};
+struct ErrorCode_tE65BC4A5E8394ECBF5FEEE7E6F65AFC33125DEA5 
+{
+	uint8_t ___value__;
 };
 struct Exception_t  : public RuntimeObject
 {
@@ -975,6 +928,14 @@ struct Exception_t_marshaled_com
 	Il2CppSafeArray* ___native_trace_ips;
 	int32_t ___caught_in_unmanaged;
 };
+struct KcpChannel_t928C36C8E41111D0E6A53EF7072513242FAC415A 
+{
+	uint8_t ___value__;
+};
+struct KcpState_tBD49C7E4E8B32B55F7EED70BF8088EDBF2ED4C99 
+{
+	int32_t ___value__;
+};
 struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C  : public RuntimeObject
 {
 	intptr_t ___m_CachedPtr;
@@ -1006,8 +967,41 @@ struct RuntimeFieldHandle_t6E4C45B6D2EA12FC99185805A7E77527899B25C5
 {
 	intptr_t ___value;
 };
+struct RuntimePlatform_t9A8AAF204603076FCAAECCCC05DA386AEE7BF66E 
+{
+	int32_t ___value__;
+};
+struct SslProtocols_t21FADB874FCAEC5039AE593AA3544639C938C77E 
+{
+	int32_t ___value__;
+};
+struct TransportError_t3210E4B47AAFFE192BD2B21A9C30C095CDAC95D9 
+{
+	uint8_t ___value__;
+};
+struct UriIdnScope_t001CC97A6F977E9BB7DB855CC6BA415A7F47491F 
+{
+	int32_t ___value__;
+};
+struct Type_t94B090894A3B9A5C5AEBD91800DB10688CC00F4A 
+{
+	int32_t ___value__;
+};
+struct Levels_tDC14D3AECB2A5D3C0CF92C300B520659F8828FDC 
+{
+	int32_t ___value__;
+};
+struct Flags_t47CF4DB4036A6A539AFA6EE39C75F772E865E897 
+{
+	uint64_t ___value__;
+};
 struct Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
 {
+};
+struct GUILayoutOption_t8B0AA056521747053A3176FCC43E9C3608940A14  : public RuntimeObject
+{
+	int32_t ___type;
+	RuntimeObject* ___value;
 };
 struct GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580  : public RuntimeObject
 {
@@ -1060,6 +1054,27 @@ struct GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580_marshaled_com
 	RectOffset_t6358774A0DEEABA4586840CB9BC7DC88B39660B5_marshaled_com* ___m_Overflow;
 	Il2CppChar* ___m_Name;
 };
+struct KcpPeer_t9877F9EA5CC2640D1A178EF2CE3097EB7E4309A2  : public RuntimeObject
+{
+	Kcp_t7FEB7DEEF1C5282CCA0714358DF71E192BAB76C3* ___kcp;
+	uint32_t ___cookie;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___receivedCookie;
+	Action_1_t189B149227C4EB1A8EEBCBA074BF4012E9F88341* ___RawSend;
+	int32_t ___state;
+	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___OnAuthenticated;
+	Action_2_tC2D3CA832F868E9436EA0A3271ADA9189C1F14ED* ___OnData;
+	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___OnDisconnected;
+	Action_2_t380281766D86EEF86589EE7A291E1BCF6FFD9487* ___OnError;
+	int32_t ___timeout;
+	uint32_t ___lastReceiveTime;
+	Stopwatch_tA188A210449E22C07053A7D3014DD182C7369043* ___watch;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___kcpMessageBuffer;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___kcpSendBuffer;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___rawSendBuffer;
+	uint32_t ___lastPingTime;
+	int32_t ___unreliableMax;
+	int32_t ___reliableMax;
+};
 struct MulticastDelegate_t  : public Delegate_t
 {
 	DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771* ___delegates;
@@ -1072,8 +1087,51 @@ struct MulticastDelegate_t_marshaled_com : public Delegate_t_marshaled_com
 {
 	Delegate_t_marshaled_com** ___delegates;
 };
+struct SimpleWebClient_tCFEE532F30E1840D2689B33DF262C4DFE22FCB1A  : public RuntimeObject
+{
+	int32_t ___maxMessagesPerTick;
+	int32_t ___maxMessageSize;
+	ConcurrentQueue_1_t52D050BE2447BB755A18789167D00E4A1B1C539E* ___receiveQueue;
+	BufferPool_t3B50B9E8892F6564D18C8894D032DDD2B542B390* ___bufferPool;
+	int32_t ___state;
+	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___onConnect;
+	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___onDisconnect;
+	Action_1_t189B149227C4EB1A8EEBCBA074BF4012E9F88341* ___onData;
+	Action_1_tAFBD759E01ADE1CCF9C2015D5EFB3E69A9F26F04* ___onError;
+};
+struct SslConfig_t0FD81226CCD8FC5913098C50129E13DE7D96FD42 
+{
+	bool ___enabled;
+	String_t* ___certPath;
+	String_t* ___certPassword;
+	int32_t ___sslProtocols;
+};
+struct SslConfig_t0FD81226CCD8FC5913098C50129E13DE7D96FD42_marshaled_pinvoke
+{
+	int32_t ___enabled;
+	char* ___certPath;
+	char* ___certPassword;
+	int32_t ___sslProtocols;
+};
+struct SslConfig_t0FD81226CCD8FC5913098C50129E13DE7D96FD42_marshaled_com
+{
+	int32_t ___enabled;
+	Il2CppChar* ___certPath;
+	Il2CppChar* ___certPassword;
+	int32_t ___sslProtocols;
+};
 struct SystemException_tCC48D868298F4C0705279823E34B00F4FBDB7295  : public Exception_t
 {
+};
+struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E  : public RuntimeObject
+{
+	String_t* ___m_String;
+	String_t* ___m_originalUnicodeString;
+	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax;
+	String_t* ___m_DnsSafeHost;
+	uint64_t ___m_Flags;
+	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info;
+	bool ___m_iriParsing;
 };
 struct Action_1_t189B149227C4EB1A8EEBCBA074BF4012E9F88341  : public MulticastDelegate_t
 {
@@ -1330,31 +1388,6 @@ struct String_t_StaticFields
 {
 	String_t* ___Empty;
 };
-struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E_StaticFields
-{
-	String_t* ___UriSchemeFile;
-	String_t* ___UriSchemeFtp;
-	String_t* ___UriSchemeGopher;
-	String_t* ___UriSchemeHttp;
-	String_t* ___UriSchemeHttps;
-	String_t* ___UriSchemeWs;
-	String_t* ___UriSchemeWss;
-	String_t* ___UriSchemeMailto;
-	String_t* ___UriSchemeNews;
-	String_t* ___UriSchemeNntp;
-	String_t* ___UriSchemeNetTcp;
-	String_t* ___UriSchemeNetPipe;
-	String_t* ___SchemeDelimiter;
-	bool ___s_ConfigInitialized;
-	bool ___s_ConfigInitializing;
-	int32_t ___s_IdnScope;
-	bool ___s_IriParsing;
-	bool ___useDotNetRelativeOrAbsolute;
-	bool ___IsWindowsFileSystem;
-	RuntimeObject* ___s_initLock;
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars;
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars;
-};
 struct U3CU3Ec_tD3A05E4D5E288F990D2D3BC5C12EF3F24A990967_StaticFields
 {
 	U3CU3Ec_tD3A05E4D5E288F990D2D3BC5C12EF3F24A990967* ___U3CU3E9;
@@ -1396,6 +1429,31 @@ struct GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580_StaticFields
 {
 	bool ___showKeyboardFocus;
 	GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580* ___s_None;
+};
+struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E_StaticFields
+{
+	String_t* ___UriSchemeFile;
+	String_t* ___UriSchemeFtp;
+	String_t* ___UriSchemeGopher;
+	String_t* ___UriSchemeHttp;
+	String_t* ___UriSchemeHttps;
+	String_t* ___UriSchemeWs;
+	String_t* ___UriSchemeWss;
+	String_t* ___UriSchemeMailto;
+	String_t* ___UriSchemeNews;
+	String_t* ___UriSchemeNntp;
+	String_t* ___UriSchemeNetTcp;
+	String_t* ___UriSchemeNetPipe;
+	String_t* ___SchemeDelimiter;
+	bool ___s_ConfigInitialized;
+	bool ___s_ConfigInitializing;
+	int32_t ___s_IdnScope;
+	bool ___s_IriParsing;
+	bool ___useDotNetRelativeOrAbsolute;
+	bool ___IsWindowsFileSystem;
+	RuntimeObject* ___s_initLock;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars;
 };
 struct Transport_t8E1D3887BA35250F79E4200BB8008A5C2D4E7E07_StaticFields
 {
@@ -2263,6 +2321,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LatencySimulation_SimulateSend_m45CF8823
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ArraySegment_1_get_Array_m85F374406C1E34FDEFA7F160336A247891AF8105_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ArraySegment_1_get_Offset_m28FEFF65E8FA9A92DF84966071346BFD426CC3AA_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var);
@@ -2282,6 +2341,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LatencySimulation_SimulateSend_m45CF8823
 	int32_t V_4 = 0;
 	int32_t G_B8_0 = 0;
 	{
+		il2cpp_codegen_runtime_class_init_inline(ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_il2cpp_TypeInfo_var);
 		int32_t L_0;
 		L_0 = ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_inline((&___1_segment), ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_RuntimeMethod_var);
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_1 = (ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*)(ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*)SZArrayNew(ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031_il2cpp_TypeInfo_var, (uint32_t)L_0);
@@ -3737,29 +3797,30 @@ IL_000b:
 
 CATCH_0057:
 	{
-		IL2CPP_POP_ACTIVE_EXCEPTION();
+		ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263* L_18 = ((ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263*)IL2CPP_GET_ACTIVE_EXCEPTION(ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263*));;
+		IL2CPP_POP_ACTIVE_EXCEPTION(Exception_t*);
 		goto IL_005a;
 	}
 
 IL_005a:
 	{
-		int32_t L_18 = V_1;
-		V_1 = ((int32_t)il2cpp_codegen_add(L_18, 1));
+		int32_t L_19 = V_1;
+		V_1 = ((int32_t)il2cpp_codegen_add(L_19, 1));
 	}
 
 IL_005e:
 	{
-		int32_t L_19 = V_1;
-		TransportU5BU5D_t7C402FB9D6F8970969298DE6D7E797995B6447BE* L_20 = V_0;
-		if ((((int32_t)L_19) < ((int32_t)((int32_t)(((RuntimeArray*)L_20)->max_length)))))
+		int32_t L_20 = V_1;
+		TransportU5BU5D_t7C402FB9D6F8970969298DE6D7E797995B6447BE* L_21 = V_0;
+		if ((((int32_t)L_20) < ((int32_t)((int32_t)(((RuntimeArray*)L_21)->max_length)))))
 		{
 			goto IL_000b;
 		}
 	}
 	{
-		ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263* L_21 = (ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263_il2cpp_TypeInfo_var)));
-		ArgumentException__ctor_m026938A67AF9D36BB7ED27F80425D7194B514465(L_21, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral24308D38A79BCB8D8287B16CB6BD069473BA95C2)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_21, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&MultiplexTransport_ClientConnect_m3B574B2AD9BA0FFCEAFBF302726AEA60EB6159F4_RuntimeMethod_var)));
+		ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263* L_22 = (ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263_il2cpp_TypeInfo_var)));
+		ArgumentException__ctor_m026938A67AF9D36BB7ED27F80425D7194B514465(L_22, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral24308D38A79BCB8D8287B16CB6BD069473BA95C2)), NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_22, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&MultiplexTransport_ClientConnect_m3B574B2AD9BA0FFCEAFBF302726AEA60EB6159F4_RuntimeMethod_var)));
 	}
 
 IL_006f:
@@ -4921,15 +4982,16 @@ IL_0013_1:
 
 CATCH_0016:
 	{
+		SocketException_t6D10102A62EA871BD31748E026A372DB6804083B* L_4 = ((SocketException_t6D10102A62EA871BD31748E026A372DB6804083B*)IL2CPP_GET_ACTIVE_EXCEPTION(SocketException_t6D10102A62EA871BD31748E026A372DB6804083B*));;
 		V_0 = ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral2C3323E6A37819D4C4AC310608DA4CF7FB13A968));
-		IL2CPP_POP_ACTIVE_EXCEPTION();
+		IL2CPP_POP_ACTIVE_EXCEPTION(Exception_t*);
 		goto IL_001f;
 	}
 
 IL_001f:
 	{
-		String_t* L_4 = V_0;
-		return L_4;
+		String_t* L_5 = V_0;
+		return L_5;
 	}
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TelepathyTransport_ServerStop_m30142FE0A7AD18FFDB297791CCE23E986DDA9037 (TelepathyTransport_t24B57277A0CC5CB9BE955D8430DCF6A236336258* __this, const RuntimeMethod* method) 
@@ -5610,6 +5672,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SimpleWebTransport_ClientSend_mC649898C4
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Log_tDF759B8AED96580E050684099CA186888896D865_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1A4125CD166298AACA05254F605CF96B8FA83345);
@@ -5635,6 +5698,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SimpleWebTransport_ClientSend_mC649898C4
 
 IL_0013:
 	{
+		il2cpp_codegen_runtime_class_init_inline(ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_il2cpp_TypeInfo_var);
 		int32_t L_1;
 		L_1 = ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_inline((&___0_segment), ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_RuntimeMethod_var);
 		int32_t L_2 = __this->___maxMessageSize;
@@ -5651,6 +5715,7 @@ IL_0013:
 
 IL_002e:
 	{
+		il2cpp_codegen_runtime_class_init_inline(ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_il2cpp_TypeInfo_var);
 		int32_t L_3;
 		L_3 = ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_inline((&___0_segment), ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_RuntimeMethod_var);
 		if (L_3)
@@ -5953,6 +6018,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SimpleWebTransport_ServerSend_m77C978FA0
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Log_tDF759B8AED96580E050684099CA186888896D865_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral21E6E77F497C5AEFFDD04F41539E01968753CCFE);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral41FD6377BAA89BE2103712801796EA0766416F2A);
@@ -5977,6 +6043,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SimpleWebTransport_ServerSend_m77C978FA0
 
 IL_0014:
 	{
+		il2cpp_codegen_runtime_class_init_inline(ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_il2cpp_TypeInfo_var);
 		int32_t L_1;
 		L_1 = ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_inline((&___1_segment), ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_RuntimeMethod_var);
 		int32_t L_2 = __this->___maxMessageSize;
@@ -5993,6 +6060,7 @@ IL_0014:
 
 IL_002f:
 	{
+		il2cpp_codegen_runtime_class_init_inline(ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_il2cpp_TypeInfo_var);
 		int32_t L_3;
 		L_3 = ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_inline((&___1_segment), ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_RuntimeMethod_var);
 		if (L_3)

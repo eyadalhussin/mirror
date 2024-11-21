@@ -1512,11 +1512,6 @@ struct U3CPrivateImplementationDetailsU3E_t6D33CA3FDDFA4218D99DBF3A286F4DBCEF2F8
 struct EndPoint_t6233F4E2EB9F0F2D36E187F12BE050E6D8B73564  : public RuntimeObject
 {
 };
-struct GUILayoutOption_t8B0AA056521747053A3176FCC43E9C3608940A14  : public RuntimeObject
-{
-	int32_t ___type;
-	RuntimeObject* ___value;
-};
 struct GeneratedNetworkCode_t01D020F89A5F518933274C1BE2170A4635C2B797  : public RuntimeObject
 {
 };
@@ -1552,16 +1547,6 @@ struct UnityEventBase_t4968A4C72559F35C0923E4BD9C042C3A842E1DB8  : public Runtim
 	InvokableCallList_t309E1C8C7CE885A0D2F98C84CEA77A8935688382* ___m_Calls;
 	PersistentCallGroup_tB826EDF15DC80F71BCBCD8E410FD959A04C33F25* ___m_PersistentCalls;
 	bool ___m_CallsDirty;
-};
-struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E  : public RuntimeObject
-{
-	String_t* ___m_String;
-	String_t* ___m_originalUnicodeString;
-	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax;
-	String_t* ___m_DnsSafeHost;
-	uint64_t ___m_Flags;
-	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info;
-	bool ___m_iriParsing;
 };
 struct UriBuilder_t7931690A4195FCF7400D95D3107C3FB1D55A1C72  : public RuntimeObject
 {
@@ -1837,6 +1822,15 @@ struct Double_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F
 {
 	double ___m_value;
 };
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2  : public ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F
+{
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_marshaled_pinvoke
+{
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_marshaled_com
+{
+};
 struct ExponentialMovingAverage_tED806B5B4B803DDC422B118420F400FEF4A0F371 
 {
 	double ___alpha;
@@ -2011,24 +2005,6 @@ struct Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D
 struct SByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5 
 {
 	int8_t ___m_value;
-};
-struct SceneMessage_t47621E5F4F96B23FBA41C9E4015DCDB9F0BE6C26 
-{
-	String_t* ___sceneName;
-	uint8_t ___sceneOperation;
-	bool ___customHandling;
-};
-struct SceneMessage_t47621E5F4F96B23FBA41C9E4015DCDB9F0BE6C26_marshaled_pinvoke
-{
-	char* ___sceneName;
-	uint8_t ___sceneOperation;
-	int32_t ___customHandling;
-};
-struct SceneMessage_t47621E5F4F96B23FBA41C9E4015DCDB9F0BE6C26_marshaled_com
-{
-	Il2CppChar* ___sceneName;
-	uint8_t ___sceneOperation;
-	int32_t ___customHandling;
 };
 struct ServerRequest_t10E18FBD88875D58D10221CFE095C590238C90DA 
 {
@@ -2264,6 +2240,10 @@ struct CommandMessage_t33C5D102BB2924A7CB43AC46B166A390E5EB893E_marshaled_com
 	uint16_t ___functionHash;
 	ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093 ___payload;
 };
+struct ConnectionQuality_t0073A70129610278F0383CCC3D8AB3DB98173A11 
+{
+	uint8_t ___value__;
+};
 struct Delegate_t  : public RuntimeObject
 {
 	intptr_t ___method_ptr;
@@ -2384,6 +2364,10 @@ struct Exception_t_marshaled_com
 	Il2CppSafeArray* ___native_trace_ips;
 	int32_t ___caught_in_unmanaged;
 };
+struct NetworkManagerMode_t04559AFAF658306F2292A15EFD5A0BCEE08E1CC4 
+{
+	int32_t ___value__;
+};
 struct NetworkReader_t85516183CC81F0937A89B9B6A92FE815896935E1  : public RuntimeObject
 {
 	ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093 ___buffer;
@@ -2406,6 +2390,10 @@ struct Plane_tB7D8CC6F7AACF5F3AA483AF005C1102A8577BC0C
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_Normal;
 	float ___m_Distance;
+};
+struct PlayerSpawnMethod_t04FBAB40F630352E66EEAB1841364F08CAD274E0 
+{
+	int32_t ___value__;
 };
 struct Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00 
 {
@@ -2432,6 +2420,10 @@ struct RpcMessage_tA24B1AA9AB9593C9491786C4AD6EBD8CD822D4AD_marshaled_com
 	uint8_t ___componentIndex;
 	uint16_t ___functionHash;
 	ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093 ___payload;
+};
+struct SceneOperation_t2EEFEE1CAE658C20BBE5E5177524C30FB0DD8A66 
+{
+	uint8_t ___value__;
 };
 struct SpawnMessage_tE475B0CF6074D61D6776360B70400F64B15E1475 
 {
@@ -2469,6 +2461,14 @@ struct SpawnMessage_tE475B0CF6074D61D6776360B70400F64B15E1475_marshaled_com
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___scale;
 	ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093 ___payload;
 };
+struct SyncDirection_t31F54E8340B7CE589F8D91E2E46C403974337717 
+{
+	int32_t ___value__;
+};
+struct SyncMode_t58A62C175B12DEDC6F497E7DDA50B753FAFFE22B 
+{
+	int32_t ___value__;
+};
 struct TimeSample_tC9D10180DC20BCD834D6C330660C8A5A2F782203 
 {
 	Stopwatch_tA188A210449E22C07053A7D3014DD182C7369043* ___watch;
@@ -2490,6 +2490,18 @@ struct TimeSample_tC9D10180DC20BCD834D6C330660C8A5A2F782203_marshaled_com
 	ExponentialMovingAverage_tED806B5B4B803DDC422B118420F400FEF4A0F371_marshaled_com ___ema;
 	double ___average;
 };
+struct UriIdnScope_t001CC97A6F977E9BB7DB855CC6BA415A7F47491F 
+{
+	int32_t ___value__;
+};
+struct Visibility_t3F87A03685D63B375AE447DAF9BEF7A39988C05F 
+{
+	int32_t ___value__;
+};
+struct Type_t94B090894A3B9A5C5AEBD91800DB10688CC00F4A 
+{
+	int32_t ___value__;
+};
 struct ClientSyncState_t4C129A86DE1EA6E8477CD118B05386CD4530565C  : public RuntimeObject
 {
 	float ___nextSyncTime;
@@ -2499,6 +2511,10 @@ struct ClientSyncState_t4C129A86DE1EA6E8477CD118B05386CD4530565C  : public Runti
 	float ___gravityScale;
 	float ___drag;
 	float ___angularDrag;
+};
+struct Flags_t47CF4DB4036A6A539AFA6EE39C75F772E865E897 
+{
+	uint64_t ___value__;
 };
 struct Nullable_1_t450D8A4ABE39BE03FC49D7D0B5C19CE450F012F8 
 {
@@ -2512,6 +2528,11 @@ struct Nullable_1_t4963285281B990B794CDEACB9C3CD3069B5FA768
 };
 struct Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
 {
+};
+struct GUILayoutOption_t8B0AA056521747053A3176FCC43E9C3608940A14  : public RuntimeObject
+{
+	int32_t ___type;
+	RuntimeObject* ___value;
 };
 struct GameObject_t76FEDD663AB33C991A9C9A23129337651094216F  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
 {
@@ -2528,6 +2549,24 @@ struct MulticastDelegate_t_marshaled_com : public Delegate_t_marshaled_com
 {
 	Delegate_t_marshaled_com** ___delegates;
 };
+struct SceneMessage_t47621E5F4F96B23FBA41C9E4015DCDB9F0BE6C26 
+{
+	String_t* ___sceneName;
+	uint8_t ___sceneOperation;
+	bool ___customHandling;
+};
+struct SceneMessage_t47621E5F4F96B23FBA41C9E4015DCDB9F0BE6C26_marshaled_pinvoke
+{
+	char* ___sceneName;
+	uint8_t ___sceneOperation;
+	int32_t ___customHandling;
+};
+struct SceneMessage_t47621E5F4F96B23FBA41C9E4015DCDB9F0BE6C26_marshaled_com
+{
+	Il2CppChar* ___sceneName;
+	uint8_t ___sceneOperation;
+	int32_t ___customHandling;
+};
 struct Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
 {
 };
@@ -2536,6 +2575,16 @@ struct SystemException_tCC48D868298F4C0705279823E34B00F4FBDB7295  : public Excep
 };
 struct Texture_t791CBB51219779964E0E8A2ED7C1AA5F92A4A700  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
 {
+};
+struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E  : public RuntimeObject
+{
+	String_t* ___m_String;
+	String_t* ___m_originalUnicodeString;
+	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax;
+	String_t* ___m_DnsSafeHost;
+	uint64_t ___m_Flags;
+	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info;
+	bool ___m_iriParsing;
 };
 struct Action_2_tE7DE89222EAD5CBE5FBA94711CB3C71222202DFC  : public MulticastDelegate_t
 {
@@ -3885,31 +3934,6 @@ struct String_t_StaticFields
 {
 	String_t* ___Empty;
 };
-struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E_StaticFields
-{
-	String_t* ___UriSchemeFile;
-	String_t* ___UriSchemeFtp;
-	String_t* ___UriSchemeGopher;
-	String_t* ___UriSchemeHttp;
-	String_t* ___UriSchemeHttps;
-	String_t* ___UriSchemeWs;
-	String_t* ___UriSchemeWss;
-	String_t* ___UriSchemeMailto;
-	String_t* ___UriSchemeNews;
-	String_t* ___UriSchemeNntp;
-	String_t* ___UriSchemeNetTcp;
-	String_t* ___UriSchemeNetPipe;
-	String_t* ___SchemeDelimiter;
-	bool ___s_ConfigInitialized;
-	bool ___s_ConfigInitializing;
-	int32_t ___s_IdnScope;
-	bool ___s_IriParsing;
-	bool ___useDotNetRelativeOrAbsolute;
-	bool ___IsWindowsFileSystem;
-	RuntimeObject* ___s_initLock;
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars;
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars;
-};
 struct ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_StaticFields
 {
 	ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093 ___U3CEmptyU3Ek__BackingField;
@@ -4015,6 +4039,31 @@ struct Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3_StaticFields
 struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_StaticFields
 {
 	int32_t ___OffsetOfInstanceIDInCPlusPlusObject;
+};
+struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E_StaticFields
+{
+	String_t* ___UriSchemeFile;
+	String_t* ___UriSchemeFtp;
+	String_t* ___UriSchemeGopher;
+	String_t* ___UriSchemeHttp;
+	String_t* ___UriSchemeHttps;
+	String_t* ___UriSchemeWs;
+	String_t* ___UriSchemeWss;
+	String_t* ___UriSchemeMailto;
+	String_t* ___UriSchemeNews;
+	String_t* ___UriSchemeNntp;
+	String_t* ___UriSchemeNetTcp;
+	String_t* ___UriSchemeNetPipe;
+	String_t* ___SchemeDelimiter;
+	bool ___s_ConfigInitialized;
+	bool ___s_ConfigInitializing;
+	int32_t ___s_IdnScope;
+	bool ___s_IriParsing;
+	bool ___useDotNetRelativeOrAbsolute;
+	bool ___IsWindowsFileSystem;
+	RuntimeObject* ___s_initLock;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars;
 };
 struct NetworkIdentity_t5C06E7EE595FF674F722D11C1397B12518C007AC_StaticFields
 {
@@ -5173,18 +5222,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ServerResponse_t32FDA3FF44465187DD1DA88F5ABAB
 
 CATCH_002b:
 	{
-		Transport_t8E1D3887BA35250F79E4200BB8008A5C2D4E7E07* L_4 = ((NetworkDiscoveryBase_2_t983E45E50206B1BDE0180495D04449161FB4FA6B*)__this)->___transport;
-		String_t* L_5;
-		L_5 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralA3550AF66B203C4270C28587A3627A21B069D395)), L_4, NULL);
+		NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8* L_4 = ((NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8*)IL2CPP_GET_ACTIVE_EXCEPTION(NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8*));;
+		Transport_t8E1D3887BA35250F79E4200BB8008A5C2D4E7E07* L_5 = ((NetworkDiscoveryBase_2_t983E45E50206B1BDE0180495D04449161FB4FA6B*)__this)->___transport;
+		String_t* L_6;
+		L_6 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralA3550AF66B203C4270C28587A3627A21B069D395)), L_5, NULL);
 		il2cpp_codegen_runtime_class_init_inline(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var)));
-		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_5, NULL);
-		IL2CPP_RETHROW_MANAGED_EXCEPTION(IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));
+		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_6, NULL);
+		IL2CPP_RETHROW_MANAGED_EXCEPTION(IL2CPP_POP_ACTIVE_EXCEPTION(Exception_t*));
 	}
 
 IL_0043:
 	{
-		ServerResponse_t32FDA3FF44465187DD1DA88F5ABAB7C3F1227088 L_6 = V_0;
-		return L_6;
+		ServerResponse_t32FDA3FF44465187DD1DA88F5ABAB7C3F1227088 L_7 = V_0;
+		return L_7;
 	}
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ServerRequest_t10E18FBD88875D58D10221CFE095C590238C90DA NetworkDiscovery_GetRequest_m766AC1A5F4FC24955B640EBF11F64C0B03321999 (NetworkDiscovery_t14DC6465F12884392EFB32AA52F65A685C91CBEF* __this, const RuntimeMethod* method) 

@@ -6,7 +6,6 @@
     "attribute_total_count_ignore_by_deep_profiler": 18,
     "extra_types_total_count": 0,
     "option_extra_types_file_count": 0,
-    "option_jobs": 16,
     "option_debug_assembly_name_count": 0,
     "option_additional_cpp_count": 0,
     "option_emit_null_checks": false,
@@ -30,6 +29,7 @@
     "option_compile_cpp": false,
     "option_development_mode": false,
     "option_enable_debugger": false,
-    "option_generate_usym_file": false
+    "option_generate_usym_file": false,
+    "option_jobs": 16
   }
 }

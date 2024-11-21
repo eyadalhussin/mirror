@@ -238,6 +238,7 @@ struct SlotU5BU5D_t8B8EE191EEC1575F1F0CAC91A208DBFDF2821D01;
 struct AnimatorControllerParameterU5BU5D_tAB05125F5DC0D98F59351CD7D8C9880DFFA8EA21;
 struct BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4;
 struct ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031;
+struct CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB;
 struct DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771;
 struct DoubleU5BU5D_tCC308475BD3B8229DB2582938669EF2F9ECC1FEE;
 struct GUILayoutOptionU5BU5D_t24AB80AB9355D784F2C65E12A4D0CC2E0C914CA2;
@@ -357,6 +358,7 @@ IL2CPP_EXTERN_C RuntimeClass* Action_2_tD7438462601D3939500ED67463331FE00CFFBDB8
 IL2CPP_EXTERN_C RuntimeClass* Action_2_tFA12D1ED57DFFBB4A246CECC16F8F9387FE254AA_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Action_3_tAEA3B0FC298F161EA8A0E82285BF499D36D8A584_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Application_tDB03BE91CDF0ACA614A5E0B67CFB77C44EB19B21_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Byte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_il2cpp_TypeInfo_var;
@@ -1044,35 +1046,6 @@ struct ValueCollection_t66C864E7E11D89B8FA47A95BBDCA249B4E2CBCDB  : public Runti
 {
 	Dictionary_2_t24393D1A3341730E07999691972C146EA1755759* ____dictionary;
 };
-struct AnimatorControllerParameter_t1FA67485445446540D4F2857762C960AE6980E02  : public RuntimeObject
-{
-	String_t* ___m_Name;
-	int32_t ___m_Type;
-	float ___m_DefaultFloat;
-	int32_t ___m_DefaultInt;
-	bool ___m_DefaultBool;
-};
-struct AnimatorControllerParameter_t1FA67485445446540D4F2857762C960AE6980E02_marshaled_pinvoke
-{
-	char* ___m_Name;
-	int32_t ___m_Type;
-	float ___m_DefaultFloat;
-	int32_t ___m_DefaultInt;
-	int32_t ___m_DefaultBool;
-};
-struct AnimatorControllerParameter_t1FA67485445446540D4F2857762C960AE6980E02_marshaled_com
-{
-	Il2CppChar* ___m_Name;
-	int32_t ___m_Type;
-	float ___m_DefaultFloat;
-	int32_t ___m_DefaultInt;
-	int32_t ___m_DefaultBool;
-};
-struct GUILayoutOption_t8B0AA056521747053A3176FCC43E9C3608940A14  : public RuntimeObject
-{
-	int32_t ___type;
-	RuntimeObject* ___value;
-};
 struct MemberInfo_t  : public RuntimeObject
 {
 };
@@ -1293,6 +1266,15 @@ struct Double_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F
 {
 	double ___m_value;
 };
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2  : public ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F
+{
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_marshaled_pinvoke
+{
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_marshaled_com
+{
+};
 struct ExponentialMovingAverage_tED806B5B4B803DDC422B118420F400FEF4A0F371 
 {
 	double ___alpha;
@@ -1342,21 +1324,6 @@ struct Int64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3
 struct IntPtr_t 
 {
 	void* ___m_value;
-};
-struct LogEntry_t84B2DF8321DDB23FBAEFB05B368C5B2E5E4D8D95 
-{
-	String_t* ___message;
-	int32_t ___type;
-};
-struct LogEntry_t84B2DF8321DDB23FBAEFB05B368C5B2E5E4D8D95_marshaled_pinvoke
-{
-	char* ___message;
-	int32_t ___type;
-};
-struct LogEntry_t84B2DF8321DDB23FBAEFB05B368C5B2E5E4D8D95_marshaled_com
-{
-	Il2CppChar* ___message;
-	int32_t ___type;
 };
 struct NetworkIdentitySerialization_t95487F26F667AF97203016B8FF0359E6D31FB4C9 
 {
@@ -1502,13 +1469,6 @@ struct Enumerator_t25F857D3E68D6D064D336F4D492AA5552FBA452C
 	int32_t ____version;
 	Guid_t ____current;
 };
-struct Enumerator_t7722B9834E3D9FAE331A4D3F1522AF694F80E74A 
-{
-	Queue_1_tAE2ED5902D9C5AB044F6BE7A6929CB5463FFD5CB* ____q;
-	int32_t ____version;
-	int32_t ____index;
-	LogEntry_t84B2DF8321DDB23FBAEFB05B368C5B2E5E4D8D95 ____currentElement;
-};
 struct Enumerator_t998CFB754BD1DB70F01605F31B668B86927BC775 
 {
 	HashSet_1_tD947D3633565E66E349BAB41E38A4862B6884465* ____set;
@@ -1533,10 +1493,26 @@ struct Nullable_1_t9C51B084784B716FFF4ED4575C63CFD8A71A86FE
 	bool ___hasValue;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___value;
 };
+struct AnimatorControllerParameterType_t2AD68F1C718AFCCBF9CF62AEBEAD0439276E4E6E 
+{
+	int32_t ___value__;
+};
 struct Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_Center;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_Extents;
+};
+struct ConnectState_t31D78A5EAC1DC772344D532C90F982892CD07EDB 
+{
+	int32_t ___value__;
+};
+struct ConnectionQuality_t0073A70129610278F0383CCC3D8AB3DB98173A11 
+{
+	uint8_t ___value__;
+};
+struct CoordinateSpace_t0D1CE19D6552A2A7CA6B8978F3B85FFB167068F6 
+{
+	int32_t ___value__;
 };
 struct Delegate_t  : public RuntimeObject
 {
@@ -1643,6 +1619,14 @@ struct Exception_t_marshaled_com
 	Il2CppSafeArray* ___native_trace_ips;
 	int32_t ___caught_in_unmanaged;
 };
+struct KeyCode_t75B9ECCC26D858F55040DDFF9523681E996D17E9 
+{
+	int32_t ___value__;
+};
+struct LogType_t9CC0F1B620DFBF3A01E8C2D2316A850D745EF331 
+{
+	int32_t ___value__;
+};
 struct MinMaxBounds_t729602A705F5D17B68FA9AD88EABAA1D38C2EF18 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___min;
@@ -1664,6 +1648,10 @@ struct NetworkConnectionToClient_t80F9FBDD786601CB93A63585D05BCAA1050C406A  : pu
 	double ___lastPingTime;
 	ExponentialMovingAverage_tED806B5B4B803DDC422B118420F400FEF4A0F371 ____rtt;
 };
+struct NetworkManagerMode_t04559AFAF658306F2292A15EFD5A0BCEE08E1CC4 
+{
+	int32_t ___value__;
+};
 struct NetworkReader_t85516183CC81F0937A89B9B6A92FE815896935E1  : public RuntimeObject
 {
 	ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093 ___buffer;
@@ -1681,6 +1669,10 @@ struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_pinvoke
 struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_com
 {
 	intptr_t ___m_CachedPtr;
+};
+struct PlayerSpawnMethod_t04FBAB40F630352E66EEAB1841364F08CAD274E0 
+{
+	int32_t ___value__;
 };
 struct RectOffset_t6358774A0DEEABA4586840CB9BC7DC88B39660B5  : public RuntimeObject
 {
@@ -1701,9 +1693,29 @@ struct RuntimeFieldHandle_t6E4C45B6D2EA12FC99185805A7E77527899B25C5
 {
 	intptr_t ___value;
 };
+struct RuntimePlatform_t9A8AAF204603076FCAAECCCC05DA386AEE7BF66E 
+{
+	int32_t ___value__;
+};
 struct RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B 
 {
 	intptr_t ___value;
+};
+struct SceneOperation_t2EEFEE1CAE658C20BBE5E5177524C30FB0DD8A66 
+{
+	uint8_t ___value__;
+};
+struct SyncDirection_t31F54E8340B7CE589F8D91E2E46C403974337717 
+{
+	int32_t ___value__;
+};
+struct SyncMode_t58A62C175B12DEDC6F497E7DDA50B753FAFFE22B 
+{
+	int32_t ___value__;
+};
+struct TextAnchor_tA46E794186AC1CD0F22888652F589EBF7DFDF830 
+{
+	int32_t ___value__;
 };
 struct TimeSample_tC9D10180DC20BCD834D6C330660C8A5A2F782203 
 {
@@ -1734,6 +1746,14 @@ struct TransformSnapshot_t55B447D197EE3C36086F10C74366C4C9A41A3250
 	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___rotation;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___scale;
 };
+struct Visibility_t3F87A03685D63B375AE447DAF9BEF7A39988C05F 
+{
+	int32_t ___value__;
+};
+struct Type_t94B090894A3B9A5C5AEBD91800DB10688CC00F4A 
+{
+	int32_t ___value__;
+};
 struct ClientSyncState_t2FD92A4022B2850F5B316FC6871ECF0FB16E0E3C  : public RuntimeObject
 {
 	double ___nextSyncTime;
@@ -1754,13 +1774,46 @@ struct ClientSyncState_t4C129A86DE1EA6E8477CD118B05386CD4530565C  : public Runti
 	float ___drag;
 	float ___angularDrag;
 };
+struct CheckMethod_t19C0A60DD2BC60E2E6B62C0C069966942C16BD6E 
+{
+	int32_t ___value__;
+};
 struct Nullable_1_tB66AFC92A1EEAEB9397AC2F3A09E4EF03159BF89 
 {
 	bool ___hasValue;
 	MinMaxBounds_t729602A705F5D17B68FA9AD88EABAA1D38C2EF18 ___value;
 };
+struct AnimatorControllerParameter_t1FA67485445446540D4F2857762C960AE6980E02  : public RuntimeObject
+{
+	String_t* ___m_Name;
+	int32_t ___m_Type;
+	float ___m_DefaultFloat;
+	int32_t ___m_DefaultInt;
+	bool ___m_DefaultBool;
+};
+struct AnimatorControllerParameter_t1FA67485445446540D4F2857762C960AE6980E02_marshaled_pinvoke
+{
+	char* ___m_Name;
+	int32_t ___m_Type;
+	float ___m_DefaultFloat;
+	int32_t ___m_DefaultInt;
+	int32_t ___m_DefaultBool;
+};
+struct AnimatorControllerParameter_t1FA67485445446540D4F2857762C960AE6980E02_marshaled_com
+{
+	Il2CppChar* ___m_Name;
+	int32_t ___m_Type;
+	float ___m_DefaultFloat;
+	int32_t ___m_DefaultInt;
+	int32_t ___m_DefaultBool;
+};
 struct Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
 {
+};
+struct GUILayoutOption_t8B0AA056521747053A3176FCC43E9C3608940A14  : public RuntimeObject
+{
+	int32_t ___type;
+	RuntimeObject* ___value;
 };
 struct GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580  : public RuntimeObject
 {
@@ -1816,6 +1869,21 @@ struct GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580_marshaled_com
 struct GameObject_t76FEDD663AB33C991A9C9A23129337651094216F  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
 {
 };
+struct LogEntry_t84B2DF8321DDB23FBAEFB05B368C5B2E5E4D8D95 
+{
+	String_t* ___message;
+	int32_t ___type;
+};
+struct LogEntry_t84B2DF8321DDB23FBAEFB05B368C5B2E5E4D8D95_marshaled_pinvoke
+{
+	char* ___message;
+	int32_t ___type;
+};
+struct LogEntry_t84B2DF8321DDB23FBAEFB05B368C5B2E5E4D8D95_marshaled_com
+{
+	Il2CppChar* ___message;
+	int32_t ___type;
+};
 struct MulticastDelegate_t  : public Delegate_t
 {
 	DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771* ___delegates;
@@ -1870,6 +1938,13 @@ struct Action_2_tFA12D1ED57DFFBB4A246CECC16F8F9387FE254AA  : public MulticastDel
 };
 struct Action_3_tAEA3B0FC298F161EA8A0E82285BF499D36D8A584  : public MulticastDelegate_t
 {
+};
+struct Enumerator_t7722B9834E3D9FAE331A4D3F1522AF694F80E74A 
+{
+	Queue_1_tAE2ED5902D9C5AB044F6BE7A6929CB5463FFD5CB* ____q;
+	int32_t ____version;
+	int32_t ____index;
+	LogEntry_t84B2DF8321DDB23FBAEFB05B368C5B2E5E4D8D95 ____currentElement;
 };
 struct Func_2_tCA17EE93F1A51D73269B90260C76484924262924  : public MulticastDelegate_t
 {
@@ -6899,6 +6974,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpatialHashingInterestManagement__ctor_m
 		return;
 	}
 }
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -15278,12 +15361,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkStatistics_OnClientReceive_m15522
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
 		int32_t L_0 = __this->___clientIntervalReceivedPackets;
 		__this->___clientIntervalReceivedPackets = ((int32_t)il2cpp_codegen_add(L_0, 1));
 		int64_t L_1 = __this->___clientIntervalReceivedBytes;
+		il2cpp_codegen_runtime_class_init_inline(ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_il2cpp_TypeInfo_var);
 		int32_t L_2;
 		L_2 = ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_inline((&___0_data), ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_RuntimeMethod_var);
 		__this->___clientIntervalReceivedBytes = ((int64_t)il2cpp_codegen_add(L_1, ((int64_t)L_2)));
@@ -15296,12 +15381,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkStatistics_OnClientSend_m33338E87
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
 		int32_t L_0 = __this->___clientIntervalSentPackets;
 		__this->___clientIntervalSentPackets = ((int32_t)il2cpp_codegen_add(L_0, 1));
 		int64_t L_1 = __this->___clientIntervalSentBytes;
+		il2cpp_codegen_runtime_class_init_inline(ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_il2cpp_TypeInfo_var);
 		int32_t L_2;
 		L_2 = ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_inline((&___0_data), ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_RuntimeMethod_var);
 		__this->___clientIntervalSentBytes = ((int64_t)il2cpp_codegen_add(L_1, ((int64_t)L_2)));
@@ -15314,12 +15401,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkStatistics_OnServerReceive_mACB3C
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
 		int32_t L_0 = __this->___serverIntervalReceivedPackets;
 		__this->___serverIntervalReceivedPackets = ((int32_t)il2cpp_codegen_add(L_0, 1));
 		int64_t L_1 = __this->___serverIntervalReceivedBytes;
+		il2cpp_codegen_runtime_class_init_inline(ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_il2cpp_TypeInfo_var);
 		int32_t L_2;
 		L_2 = ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_inline((&___1_data), ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_RuntimeMethod_var);
 		__this->___serverIntervalReceivedBytes = ((int64_t)il2cpp_codegen_add(L_1, ((int64_t)L_2)));
@@ -15332,12 +15421,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkStatistics_OnServerSend_mBA206EE1
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
 		int32_t L_0 = __this->___serverIntervalSentPackets;
 		__this->___serverIntervalSentPackets = ((int32_t)il2cpp_codegen_add(L_0, 1));
 		int64_t L_1 = __this->___serverIntervalSentBytes;
+		il2cpp_codegen_runtime_class_init_inline(ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093_il2cpp_TypeInfo_var);
 		int32_t L_2;
 		L_2 = ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_inline((&___1_data), ArraySegment_1_get_Count_m7B026228B16D905890B805EA70E9114D1517B053_RuntimeMethod_var);
 		__this->___serverIntervalSentBytes = ((int64_t)il2cpp_codegen_add(L_1, ((int64_t)L_2)));
@@ -15645,6 +15736,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NetworkTransform_Weaved_mEAF124119F15F94
 		return (bool)1;
 	}
 }
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -19779,23 +19878,24 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RemoteStatistics_LoadPassword_mD95765217
 
 CATCH_0022:
 	{
-		V_1 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));
-		Exception_t* L_6 = V_1;
-		String_t* L_7;
-		L_7 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralCB91120D6454AF6059165FC977C36EF8C833E0FD)), L_6, NULL);
+		Exception_t* L_6 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));;
+		V_1 = L_6;
+		Exception_t* L_7 = V_1;
+		String_t* L_8;
+		L_8 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralCB91120D6454AF6059165FC977C36EF8C833E0FD)), L_7, NULL);
 		il2cpp_codegen_runtime_class_init_inline(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var)));
-		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(L_7, NULL);
-		IL2CPP_POP_ACTIVE_EXCEPTION();
+		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(L_8, NULL);
+		IL2CPP_POP_ACTIVE_EXCEPTION(Exception_t*);
 		goto IL_0045;
 	}
 
 IL_0035:
 	{
-		String_t* L_8 = V_0;
-		String_t* L_9;
-		L_9 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral5456E5C3FCFC8B8BC7D1C90A0CBCEF56CEE4D270, L_8, NULL);
+		String_t* L_9 = V_0;
+		String_t* L_10;
+		L_10 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral5456E5C3FCFC8B8BC7D1C90A0CBCEF56CEE4D270, L_9, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(L_9, NULL);
+		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(L_10, NULL);
 	}
 
 IL_0045:

@@ -1,15 +1,17 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using Mirror;
 
+
 public class GameManagerScript : NetworkBehaviour
 {
     public static GameManagerScript Instance;
-    //Expolisions
-    public GameObject explosionPrefab1;
-    public GameObject minionAttackPrefab1;
+    //Managers
+    private SpawnManager _spawnManager;
+    private PlayerAIManager _playerAIManager;
+    private DeathManager _deathManager;
+    private ListManager _listManager;
 
     //Players
     public GameObject playerPrefab;
@@ -17,68 +19,186 @@ public class GameManagerScript : NetworkBehaviour
     public GameObject playerAIPrefab;
 
     //Minions
-    public GameObject minionPrefab;
     public GameObject playerMinionPrefab;
 
     //Projectiles
     public GameObject projectile_1;
 
-    private List<GameObject> players = new List<GameObject>();
-    private List<GameObject> minions = new List<GameObject>();
+    //Colors
+    List<Color> _playerColors = new List<Color>();
 
     //Materials
+    /*
+    private List<Material> materials = new List<Material>();
     public Material mat1;
     public Material mat2;
-    public Material mat3;
     public Material mat4;
-    public Material mat5;
     public Material mat6;
     public Material mat7;
     public Material mat8;
+    */
 
-    private List<Material> materials = new List<Material>();
-
-
-    private void Awake()
+    void Awake()
     {
         if (Instance == null)
         {
+            DontDestroyOnLoad(gameObject);
             Instance = this;
-            initMaterials();
-            //initAI();
-            initMinions();
-            //players.Add(InstatitatePlayer(playerPrefab, new Vector3(0f, 3.5f, 0f)));
+            //InitMaterials();
+            InitManagers();
+            InitColors();
         }
         else
         {
             // Ensure there's only one instance of the GameManager
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
-
-        //InvokeRepeating("LogInfo", 1f, 1f);
     }
 
-    void Update()
+    private void Update()
     {
-        if(minions.Count <= 5)
-        {
-            initMinions();
-        }
 
     }
 
-    public void initMaterials()
+    /*
+     This Method will replace Start(), since Start will be called at the very beginning in the "Offline" scene,
+    only when changing the scene to the "Game", this method should be called*/
+    public void InitGameManager()
+    {
+        _spawnManager.InitMinions();
+        _spawnManager.SetGameStarted();
+    }
+
+
+    //Initialize Managers because these are private at the start of the method
+    private void InitManagers()
+    {
+        Debug.Log("Initializing Managers");
+        //Spawn Manager
+        _spawnManager = GetComponent<SpawnManager>();
+        _spawnManager.InitGameManager(this);
+        //Death Manager
+        _deathManager = GetComponent<DeathManager>();
+        _deathManager.InitGameManager(this);
+        //List Manager
+        _listManager = GetComponent<ListManager>();
+        _listManager.InitGameManager(this);
+    }
+
+    //AI Manager
+    public void InitAI()
+    {
+        _playerAIManager.InitAI();
+    }
+    //AI Manager
+
+    //Spawn Manager
+    public void SpawnMinion(Vector3 spawnPosition)
+    {
+        if(_spawnManager != null)
+        {
+            _spawnManager.SpawnEnemyMinion(spawnPosition);
+        }
+    }
+    public void SpawnExplosion(Vector3 explosionPosition)
+    {
+        if (_spawnManager != null)
+        {
+            _spawnManager.SpawnExplosion(explosionPosition);
+        }
+    }
+
+    public void SpawnPlayerExplosion(Vector3 explosionPosition)
+    {
+        if (_spawnManager != null)
+        {
+            _spawnManager.SpawnPlayerExpolision(explosionPosition);
+        }
+    }
+
+    public void SpawnMinionAttack(Vector3 attackPosition)
+    {
+        if (_spawnManager != null)
+        {
+            _spawnManager.SpawnMinionAttack(attackPosition);
+        }
+    }
+
+    /*
+    public void InitMinions()
+    {
+       if(_spawnManager != null)
+        {
+            _spawnManager.InitMinions();
+        }
+    }
+    */
+
+
+
+    public void SpawnNewPlayerMinion(int killerID)
+    {
+        GameObject killer = _listManager.GetPlayerWithID(killerID);
+
+        if(_spawnManager != null)
+        {
+            _spawnManager.SpawnNewPlayerMinion(killer);
+        }
+
+    }
+    //Spawn Manager
+
+    //Death Manager
+    public void OnMinionEnemyDeath(GameObject lastAttacker, GameObject minion)
+    {
+        _deathManager.OnMinionEnemyDeath(lastAttacker, minion);
+    }
+
+    public void OnPlayerDeath(GameObject lastAttacker, GameObject deadplayer)
+    {
+        _deathManager.OnPlayerDeath(lastAttacker, deadplayer);
+    }
+
+    public void OnPlayerMinionDeath(GameObject minion)
+    {
+        _deathManager.OnPlayerMinionDeath(minion);
+    }
+    //Death Manager
+
+    //List Manager
+
+
+    public void RemoveMinionFromList(GameObject minion)
+    {
+        _listManager.RemoveMinionFromList(minion);
+    }
+
+    public void RemovePlayerFromList(GameObject player)
+    {
+        _listManager.RemovePlayerFromList(player);
+    }
+
+    public int GetMinionsCount()
+    {
+        return _listManager.GetMinionsCount();
+    }
+
+    //List Manager
+
+    //TODO : Refactoring
+    /*
+    public void InitMaterials()
     {
         materials.Add(mat1);
         materials.Add(mat2);
-        materials.Add(mat3);
         materials.Add(mat4);
-        materials.Add(mat5);
         materials.Add(mat6);
         materials.Add(mat7);
         materials.Add(mat8);
     }
+    */
 
+    /*
     public Material SetPlayerMaterial()
     {
         int random = Random.Range(0, materials.Count - 1);
@@ -86,7 +206,9 @@ public class GameManagerScript : NetworkBehaviour
         materials.RemoveAt(random);
         return mat;
     }
+    */
 
+    /*
     public Color GetColor()
     {
         int random = Random.Range(0, materials.Count - 1);
@@ -94,23 +216,23 @@ public class GameManagerScript : NetworkBehaviour
         materials.RemoveAt(random);
         return color;
     }
-
+    */
     public void AddPlayer(GameObject createdPlayer)
     {
         if (!isServer) return;
         if(createdPlayer != null)
         {
             int randomID = Random.Range(100, 999);
-            createdPlayer.GetComponent<PlayerObj>().SetID(randomID);
-            Color oldColor = createdPlayer.transform.Find("Body").GetComponent<Renderer>().material.color;
-            Color newColor = GetColor();
-            createdPlayer.GetComponent<PlayerObj>().SetPlayerColor(newColor);
-            createdPlayer.GetComponent<PlayerObj>().SetColor(oldColor, newColor);
-            players.Add(createdPlayer);
+            createdPlayer.GetComponent<PlayerCore>().SetID(randomID);
+            _listManager.AddPlayerToList(createdPlayer);
             Debug.Log("Successfully created a player");
         }
     }
 
+    public void AddMinionToList(GameObject minion)
+    {
+        _listManager.AddMinionToList(minion);
+    }
 
     public Transform GetPlayerTransform()
     {
@@ -131,27 +253,25 @@ public class GameManagerScript : NetworkBehaviour
     {
         GameObject player = Instantiate(playerPrefab, position, Quaternion.identity);
         int id = Random.Range(100, 999);
-        player.GetComponent<PlayerObj>().SetID(id);
+        player.GetComponent<PlayerCore>().SetID(id);
         Debug.Log("Successfully instatitated player with the ID:" + id);
         return player;
     }
 
-    public GameObject GetNextTargetNormal(Vector3 minionPosition)
+    public GameObject GetNextPlayerToPosition(Vector3 minionPosition)
     {
-        if (players.Count <= 0) return null;
-        GameObject nextTarget = players.OrderBy(player => Vector3.Distance(player.transform.position, minionPosition)).First();
-        return nextTarget;
+        return _listManager.GetNextPlayerToPosition(minionPosition);
     }
 
     //Returns the closest normal minion relative to own position
     public GameObject GetNextMinion(Vector3 pos)
     {
-        return minions.OrderBy(minion => Vector3.Distance(pos, minion.transform.position)).First();
+        return _listManager.GetNextMinionToPosition(pos);
     }
 
     public GameObject GetNextPlayer(Vector3 pos, int controllingPlayerID)
     {
-        IEnumerable<GameObject> filteredPlayers = players.Where(player => player.GetComponent<PlayerObj>().GetID() != controllingPlayerID);
+        IEnumerable<GameObject> filteredPlayers = _listManager.GetPlayersList().Where(player => player.GetComponent<PlayerCore>().GetID() != controllingPlayerID);
         if(filteredPlayers.Count() >= 1)
         {
             return filteredPlayers.OrderBy(player => Vector3.Distance(pos, player.transform.position)).First();
@@ -162,7 +282,7 @@ public class GameManagerScript : NetworkBehaviour
     //Returns the next Target player Minion
     public GameObject GetNextPlayerMinion(Vector3 pos, GameObject playerToAttack)
     {
-        List<GameObject> playerMinions = playerToAttack.GetComponent<PlayerObj>().GetMinions();
+        List<GameObject> playerMinions = playerToAttack.GetComponent<PlayerCore>().GetMinions();
 
         if(playerMinions.Count > 0)
         {
@@ -171,234 +291,84 @@ public class GameManagerScript : NetworkBehaviour
         return null;
     }
 
-    //Instantitating
-    void initAI()
+    private void RespawnPlayer(GameObject deadPlayer)
     {
-        if(playerAIPrefab != null)
-        {
-            players.Add(Instantiate(playerAIPrefab, new Vector3(20f, 3.25f, 20f), Quaternion.identity));
-            players.Add(Instantiate(playerAIPrefab, new Vector3(1f, 3.25f, 1f), Quaternion.identity));
-            players.Add(Instantiate(playerAIPrefab, new Vector3(30f, 3.25f, 30f), Quaternion.identity));
-        }
-        players.ForEach(player => {
-            int id = Random.Range(1000, 9999);
-            PlayerObj playerObj = player.GetComponent<PlayerObj>();
-            /*
-             
-            Hier Material !!!!
-             
-             */
-            playerObj.SetID(id);
-            playerObj.SetTypeAI();
+        if (!isServer || deadPlayer == null) return;
 
-        });
-    }
-
-    void SpawnMinion(float x, float y, float z)
-    {
-        if(minionPrefab != null)
-        {
-            GameObject minion = Instantiate(minionPrefab, new Vector3(x,y,z), Quaternion.identity);
-            minions.Add(minion);
-            NetworkServer.Spawn(minion);
-        }
-    }
-
-    void initMinions()
-    {
-        if (!isServer) return;
-        if(minionPrefab != null)
-        {
-            //in the middle
-            /*
-            minions.Add(Instantiate(minionPrefab, new Vector3(1f, 3.25f, 1f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(2f, 3.25f, 2f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(3f, 3.25f, 3f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(4f, 3.25f, 4f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(5f, 3.25f, 5f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-5f, 3.25f, -1f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-4f, 3.25f, -2f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-3f, 3.25f, -3f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-2f, 3.25f, -4f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-1f, 3.25f, -5f), Quaternion.identity));
-            */
-            SpawnMinion(1f, 3.25f, 1f);
-            SpawnMinion(2f, 3.25f, 2f);
-            SpawnMinion(3f, 3.25f, 3f);
-            SpawnMinion(4f, 3.25f, 4f);
-            SpawnMinion(5f, 3.25f, 5f);
-            SpawnMinion(-5f, 3.25f, -1f);
-            SpawnMinion(-4f, 3.25f, -2f);
-            SpawnMinion(-3f, 3.25f, -3f);
-            SpawnMinion(-2f, 3.25f, -4f);
-            SpawnMinion(-1f, 3.25f, -5f);
-            /*
-            //Top Left Corner
-            minions.Add(Instantiate(minionPrefab, new Vector3(-86f, 3.25f, 85f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-87f, 3.25f, 87f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-88f, 3.25f, 88f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-89f, 3.25f, 89f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-90f, 3.25f, 90f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-91f, 3.25f, 91f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-92f, 3.25f, 92f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-93f, 3.25f, 93f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-94f, 3.25f, 94f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-95f, 3.25f, 95f), Quaternion.identity));
-
-            //Top Right Corner
-            minions.Add(Instantiate(minionPrefab, new Vector3(86f, 3.25f, 85f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(87f, 3.25f, 87f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(88f, 3.25f, 88f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(89f, 3.25f, 89f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(90f, 3.25f, 90f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(91f, 3.25f, 91f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(92f, 3.25f, 92f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(93f, 3.25f, 93f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(94f, 3.25f, 94f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(95f, 3.25f, 95f), Quaternion.identity));
-
-            //Bottom Right Corner
-            minions.Add(Instantiate(minionPrefab, new Vector3(86f, 3.25f, -85f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(87f, 3.25f, -87f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(88f, 3.25f, -88f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(89f, 3.25f, -89f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(90f, 3.25f, -90f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(91f, 3.25f, -91f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(92f, 3.25f, -92f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(93f, 3.25f, -93f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(94f, 3.25f, -94f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(95f, 3.25f, -95f), Quaternion.identity));
-
-            //Bottom Left Corner
-            minions.Add(Instantiate(minionPrefab, new Vector3(-86f, 3.25f, -85f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-87f, 3.25f, -87f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-88f, 3.25f, -88f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-89f, 3.25f, -89f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-90f, 3.25f, -90f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-91f, 3.25f, -91f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-92f, 3.25f, -92f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-93f, 3.25f, -93f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-94f, 3.25f, -94f), Quaternion.identity));
-            minions.Add(Instantiate(minionPrefab, new Vector3(-95f, 3.25f, -95f), Quaternion.identity));
-            */
-            //Set IDS for the minions
-            minions.ForEach(minion =>
-            {
-                int randomID = Random.Range(100000, 999999);
-                minion.GetComponent<MinionAI>().SetID(randomID);
-            });
-        }
-    }
-    // //Instantitating
-
-    //OnDeathMethods
-    public void OnMinionDeath(GameObject lastAttacker, GameObject minion)
-    {
-        if (!isServer) return;
-        //Destroy and Remove the minion from the list
-        int minionID = minion.GetComponent<MinionAI>().GetID();
-        int minionIndex = minions.FindIndex(minion => minion.GetComponent<MinionAI>().GetID() == minionID);
-        if(minionIndex < minions.Count && minionIndex >= 0)
-        {
-            minions.RemoveAt(minionIndex);
-            Destroy(minion);
-        }
-        //Find who killed the minion
-        int killerID = 0;
-        //Minion Killed by playerminion
-        if (lastAttacker.GetComponent<MinionAI>() != null)
-        {
-            killerID = lastAttacker.GetComponent<MinionAI>().GetControllingPlayer().GetComponent<PlayerObj>().GetID();
-        }
-        else
-        {
-            killerID = lastAttacker.GetComponent<PlayerObj>().GetID();
-        }
-
-        int playerIndex = players.FindIndex(player => player.GetComponent<PlayerObj>().GetID() == killerID);
-        GameObject player = players[playerIndex];
-
-        //Instantitate a new playerMinion
-        float randomOffset = Random.Range(4f, 6f);
-        Vector3 instancePosition = player.transform.position;
-        GameObject newPlayerMinion = Instantiate(playerMinionPrefab, instancePosition, Quaternion.identity);
-
-        //Set The color of the minion to match the player
-        newPlayerMinion.GetComponent<Renderer>().material = player.transform.Find("Body").GetComponent<Renderer>().material;
-        //Change the Type of the spawned Minion
-        newPlayerMinion.GetComponent<MinionAI>().SetMinionType(MinionType.PlayerMinion);
-        newPlayerMinion.GetComponent<MinionAI>().SetControllingPlayer(player);
-        int randomID = Random.Range(100, 999);
-        newPlayerMinion.GetComponent<MinionAI>().SetID(randomID);
-        //Add the newPlayerMinion to the list
-        player.GetComponent<PlayerObj>().GetMinions().Add(newPlayerMinion);
-
-
-        Color playerColor = player.transform.Find("Body").GetComponent<Renderer>().material.color;
-        NetworkServer.Spawn(newPlayerMinion);
-        newPlayerMinion.GetComponent<MinionAI>().SetMinionColor(playerColor);
-        newPlayerMinion.GetComponent<MinionAI>().SetColor(newPlayerMinion.GetComponent<Renderer>().material.color, playerColor);
-        //Spawn the Explosion Effect
-
-        SpawnExplosion(minion.transform.position);
-    }
-
-    public void OnPlayerMinionDeath(GameObject minion)
-    {
-        //Get the controlling player
-        GameObject controllingPlayer = minion.GetComponent<MinionAI>().GetControllingPlayer();
-        int minionID = minion.GetComponent<MinionAI>().GetID();
-
-        List<GameObject> minionsList = controllingPlayer.GetComponent<PlayerObj>().GetMinions();
-
-        if (minionsList.Count > 0)
-        {
-            if (minion != null)
-            {
-                int minionIndex = minionsList.FindIndex(minion => minion.GetComponent<MinionAI>().GetID() == minionID);
-                minionsList.RemoveAt(minionIndex);
-                SpawnExplosion(minion.transform.position);
-                Destroy(minion);
-            }
-
-        }
-    }
-    // //OnDeath Methods
-
-
-    //Visual Effects
-    void SpawnExplosion(Vector3 pos)
-    {
-        if (explosionPrefab1 != null)
-        {
-            //Quaternion represents a rotation with no rotation applied
-            GameObject explosion = Instantiate(explosionPrefab1, pos, Quaternion.identity);
-            NetworkServer.Spawn(explosion);
-        }
-    }
-
-    public void SpawnMinionAttack(Vector3 pos)
-    {
+        float randomX = Random.Range(50f, 100f);
+        float randomZ = Random.Range(50f, 100f);
         
-        if (minionAttackPrefab1 != null)
-        {
-            //Quaternion represents a rotation with no rotation applied
-            GameObject minionAttack = Instantiate(minionAttackPrefab1, pos, Quaternion.identity);
-            NetworkServer.Spawn(minionAttack);
-        }
-        
+        deadPlayer.SetActive(true);
+        deadPlayer.transform.position = new Vector3(randomX, 3.5f, randomZ);
+        deadPlayer.GetComponent<LifeComponent>().SetHealth(100f);
+        deadPlayer.GetComponent<PlayerCore>().SetAlive(true);
     }
 
-    ////Visual Effects
-
-    private void LogInfo()
+    public void DestroyAllPlayerMinions(GameObject player)
     {
-        
-        players.ForEach(player => {
-            Debug.Log("Player with ID: " + player.GetComponent<PlayerObj>().GetID() + " Has " + player.GetComponent<PlayerObj>().GetMinions().Count + " Minions Left");
+        if (_listManager)
+        {
+            _listManager.DestroyAllPlayerMinions(player);
+        }
+    }
+
+    private void CheckGameEnd()
+    {
+        /*
+        //TODO If u set A timer for the players u have to wait also here to check the players!!!
+        bool allPlayerDead = true;
+        this.players.ForEach(player => {
+            if (player.GetComponent<PlayerCore>().IsAlive()) allPlayerDead = false;
         });
 
-        Debug.Log("Normal Minions in Game: " + minions.Count);
+        if (allPlayerDead)
+        {
+            Debug.Log("All Players are, Dead returning to Lobby");
+            RoomManagerMR.Instance.ServerChangeScene("Room");
+        }
+        */
+    }
+
+
+    public Color GetRandomColor()
+    {
+        /*
+        Color[] playerColors = new Color[]
+        {
+        new Color(0f, 0f, 1f), // Blue
+        new Color(1f, 1f, 0f), // Yellow
+        new Color(0.5f, 0f, 0.5f), // Purple
+        new Color(0f, 1f, 1f), // Cyan
+        new Color(1f, 0.5f, 0f), // Orange
+        new Color(0f, 0.5f, 0f), // Dark Green
+        };
+        */
+        
+        if(_playerColors.Count <= 0)
+        {
+            InitColors();
+        }
+
+        int random = Random.Range(0, _playerColors.Count);
+        Color color = _playerColors[random];
+        _playerColors.RemoveAt(random);
+        return color;
+    }
+
+    private void InitColors()
+    {
+        Color color1 = new Color(0f, 0f, 1f); // Blue
+        Color color2 = new Color(1f, 1f, 0f); // Yellow
+        Color color3 = new Color(0.5f, 0f, 0.5f); // Purple
+        Color color4 = new Color(0f, 1f, 1f); // Cyan
+        Color color5 = new Color(1f, 0.5f, 0f); // Orange
+        Color color6 = new Color(0f, 0.5f, 0f); // Dark Green
+        _playerColors.Add(color1);
+        _playerColors.Add(color2);
+        _playerColors.Add(color3);
+        _playerColors.Add(color4);
+        _playerColors.Add(color5);
+        _playerColors.Add(color6);
     }
 
 

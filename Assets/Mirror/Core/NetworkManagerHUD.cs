@@ -1,9 +1,8 @@
 // vis2k: GUILayout instead of spacey += ...; removed Update hotkeys to avoid
 // confusion if someone accidentally presses one.
 using UnityEngine;
+using Mirror;
 
-namespace Mirror
-{
     /// <summary>Shows NetworkManager controls in a GUI at runtime.</summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("Network/Network Manager HUD")]
@@ -152,4 +151,3 @@ namespace Mirror
             }
         }
     }
-}
